@@ -19,7 +19,7 @@ export default function Header() {
     },
     {
       title: "Join Our Team",
-      link: "/career",
+      link: "/team",
     },
   ];
 
@@ -67,7 +67,7 @@ export default function Header() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                // padding: "12px 0",
+                padding: "12px 0",
                 gap: "20px",
               }}
             >

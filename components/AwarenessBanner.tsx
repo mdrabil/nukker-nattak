@@ -541,7 +541,7 @@ const styles: any = {
 
     overflow: "hidden",
 
-    paddingTop: "200px",
+    paddingTop: "100px",
     paddingBottom: "200px",
     paddingLeft: "20px",
     paddingRight: "20px",
