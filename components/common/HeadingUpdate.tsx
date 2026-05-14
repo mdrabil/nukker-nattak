@@ -19,7 +19,7 @@ export const HeadingUpdate = ({
       </div>
 
       {/* TITLE */}
-      <h2 className="gsap-text"
+      <h2 className=""
         style={{
           margin: 0,
           fontSize: `clamp(${mobileSize}, 5vw, ${desktopSize})`,

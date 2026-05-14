@@ -351,7 +351,7 @@ const Home4 = () => {
                   }}
                 >
                   {/* TITLE */}
-                  <div className="title gsap-text">
+                  <div className="title">
                     {item.title}
                   </div>
 

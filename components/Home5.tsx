@@ -117,7 +117,7 @@ const Home5 = () => {
       const isLast = index === filters.length - 1;
 
       return (
-        <div key={index} className="filterCard gsap-box">
+        <div key={index} className="filterCard">
     
 
      <div className="gsap-icon">
@@ -127,7 +127,7 @@ const Home5 = () => {
 
           <h2 className="gsap-hover-text">{item.title}</h2>
 
-       <p className="gsap-text">
+       <p className="">
             {item.desc}</p>
 
    
@@ -156,7 +156,7 @@ const Home5 = () => {
                     desktopSize="50px"
                   />
 <div style={{ marginBottom: "50px" }}>
-  <span className="gsap-text"
+  <span className=""
     style={{
       fontSize: "clamp(16px, 3vw, 20px)", // 👈 mobile 18px, desktop 30px
       fontWeight: "500",

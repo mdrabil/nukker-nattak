@@ -86,7 +86,7 @@ const WhoAreWe = () => {
 
       {/* CONTENT */}
       <div ref={gridRef} className="textWrapper">
-        <span className="whatText gsap-text">
+        <span className="whatText ">
           Street plays have the unique ability to connect directly with
           people in their own language, in their own space. Over the
           years, we have partnered with government bodies, corporates,

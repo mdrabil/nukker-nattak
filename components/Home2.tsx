@@ -278,11 +278,11 @@ const Home2 = () => {
 
         {/* GRID */}
 
-        <div className="responsiveGrid gsap-stagger-wrap">
+        <div className="responsiveGrid">
           {campaigns.map((item) => (
             <div
               key={item}
-              className="gridItem gsap-box"
+              className="gridItem"
             >
               <img
                 src={`/images/home${item}.png`}
