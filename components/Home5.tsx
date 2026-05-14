@@ -158,8 +158,8 @@ const Home5 = () => {
 <div style={{ marginBottom: "50px" }}>
   <span className="gsap-text"
     style={{
-      fontSize: "clamp(16px, 3vw, 25px)", // 👈 mobile 18px, desktop 30px
-      fontWeight: "700",
+      fontSize: "clamp(16px, 3vw, 20px)", // 👈 mobile 18px, desktop 30px
+      fontWeight: "500",
     }}
   >
     Join hands with us to create awareness, inspire communities, and drive meaningful

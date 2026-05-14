@@ -303,7 +303,7 @@ const Home3 = () => {
                 className="image"
               />
 
-              <h2 className="title">{item.title}</h2>
+              <h2 className="title gsap-text">{item.title}</h2>
             </div>
           ))}
         </div>

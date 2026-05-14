@@ -99,15 +99,143 @@
 // };
 
 // export default Home2;
+
+
+
+
+// "use client";
+
+// import React, { useEffect, useRef } from "react";
+
+
+// const Home2 = () => {
+//   const sectionRef = useRef<HTMLDivElement | null>(null);
+
+
+
+//   return (
+//     <div
+//       ref={sectionRef}
+//       style={{
+//         width: "100%",
+//         overflow: "hidden",
+//       }}
+//     >
+//       <div
+//         style={{
+//           width: "100%",
+//           padding: "40px 0px",
+
+//           display: "flex",
+//           flexDirection: "column",
+//           alignItems: "center",
+//           justifyContent: "center",
+
+//           gap: "35px",
+//         }}
+//       >
+
+//         {/* HEADING */}
+
+//         <h2
+//           className="gsap-heading"
+//           style={{
+//             margin: 0,
+//             textAlign: "center",
+//             fontSize: "clamp(20px, 4vw, 42px)",
+//             fontWeight: 800,
+//             lineHeight: "1.3",
+//           }}
+//         >
+//           Trusted Partner for Impactful{" "}
+//           <span style={{ color: "#F26A21" }}>
+//             Awareness Campaigns
+//           </span>
+//         </h2>
+
+//         {/* GRID */}
+
+//         <div className="responsiveGrid gsap-stagger-wrap">
+//           {[1, 4, 3, 2].map((item) => (
+//             <div
+//               key={item}
+//               className="gridItem gsap-box"
+//             >
+//               <img
+//                 src={`/images/home${item}.png`}
+//                 alt={`Campaign ${item}`}
+//                 className="gridImage gsap-hover-text"
+//               />
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* CSS */}
+
+//       <style jsx>{`
+//         .responsiveGrid {
+//           width: 100%;
+
+//           display: flex;
+//           flex-wrap: wrap;
+
+//           justify-content: center;
+//           align-items: center;
+
+//           gap: 20px;
+//         }
+
+//         .gridItem {
+//           width: calc(50% - 10px);
+
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//         }
+
+//         .gridImage {
+//           width: 70%;
+//           max-width: 220px;
+//           height: 180px;
+
+//           object-fit: contain;
+//           display: block;
+
+//           will-change: transform, opacity;
+//           transform: translateZ(0);
+//           backface-visibility: hidden;
+//         }
+
+//         @media (min-width: 1024px) {
+//           .responsiveGrid {
+//             gap: 60px;
+//           }
+
+//           .gridItem {
+//             width: auto;
+//           }
+//         }
+//       `}</style>
+//     </div>
+//   );
+// };
+
+// export default Home2;
+
+
+
 "use client";
 
-import React, { useEffect, useRef } from "react";
-
+import React, { useRef } from "react";
 
 const Home2 = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-
+  // separate array
+  const campaigns = [
+    1, 4, 3, 2,1,4,3
+  ];
 
   return (
     <div
@@ -120,17 +248,16 @@ const Home2 = () => {
       <div
         style={{
           width: "100%",
-          padding: "40px 0px",
+          padding: "40px 0px 0px 0px",
 
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
 
-          gap: "35px",
+          gap: "0px",
         }}
       >
-
         {/* HEADING */}
 
         <h2
@@ -152,7 +279,7 @@ const Home2 = () => {
         {/* GRID */}
 
         <div className="responsiveGrid gsap-stagger-wrap">
-          {[1, 4, 3, 2].map((item) => (
+          {campaigns.map((item) => (
             <div
               key={item}
               className="gridItem gsap-box"
@@ -172,21 +299,32 @@ const Home2 = () => {
       <style jsx>{`
         .responsiveGrid {
           width: 100%;
-
+padding-top:20px;
           display: flex;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
 
-          justify-content: center;
+            justify-content: flex-start;
           align-items: center;
 
-          gap: 20px;
+          gap: 40px;
+
+          overflow-x: auto;
+          overflow-y: hidden;
+
+          scrollbar-width: none;
+        }
+
+        .responsiveGrid::-webkit-scrollbar {
+          display: none;
         }
 
         .gridItem {
-          width: calc(50% - 10px);
+         width: calc(50% - 10px);
+
+          flex: 0 0 auto;
 
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
         }
 
@@ -205,12 +343,24 @@ const Home2 = () => {
 
         @media (min-width: 1024px) {
           .responsiveGrid {
-            gap: 60px;
+            gap: 0px;
           }
 
           .gridItem {
             width: auto;
           }
+             .gridImage {
+          width: 70%;
+          max-width: 220px;
+          height: 180px;
+
+          object-fit: contain;
+          display: block;
+
+          will-change: transform, opacity;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
         }
       `}</style>
     </div>

@@ -343,7 +343,7 @@ const Home4 = () => {
                   }}
                 />
 
-                {/* CONTENT BOX */}
+               
                 <div
                   className="bottomBox"
                   style={{
@@ -351,7 +351,7 @@ const Home4 = () => {
                   }}
                 >
                   {/* TITLE */}
-                  <div className="title">
+                  <div className="title gsap-text">
                     {item.title}
                   </div>
 
@@ -370,7 +370,7 @@ const Home4 = () => {
         </div>
       </div>
 
-      {/* CSS */}
+     
       <style jsx>{`
         .responsiveGrid {
           width: 100%;
