@@ -199,6 +199,7 @@ import Heading from "./common/Heading";
 import { Circle } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { HeadingUpdate } from "./common/HeadingUpdate";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -299,7 +300,16 @@ const Home4 = () => {
     >
       {/* HEADING */}
       <div ref={headingWrapRef}>
-        <Heading title="Our Recent Campaigns" />
+      
+
+          <HeadingUpdate
+                    title="Our Recent"
+                    color="black"
+                    title2={true}
+                    title2Text="Campaigns"
+                    mobileSize="20px"
+                    desktopSize="50px"
+                  />
       </div>
 
       <div

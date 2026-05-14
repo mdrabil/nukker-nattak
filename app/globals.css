@@ -256,3 +256,74 @@ body{
   }
 
 }
+
+
+/* ===== GLOBAL HOVER ANIMATION ===== */
+
+.smoothHoverCard {
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+  transform-origin: center;
+}
+
+.smoothHoverCard:hover {
+  animation: smoothRotateScale 0.6s ease forwards;
+}
+
+@keyframes smoothRotateScale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.04) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1.06) rotate(10deg);
+  }
+}
+
+/* OPTIONAL → smoother content animation */
+.smoothHoverContent {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.smoothHoverCard:hover .smoothHoverContent {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================
+   REUSABLE ICON HOVER ANIMATION
+   USE ANYWHERE → just add class="iconHover"
+========================================= */
+
+.iconHover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.5s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.iconHover:hover {
+  animation: iconRotateScale 0.6s linear ease;
+}
+
+@keyframes iconRotateScale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.08) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1.12) rotate(10deg);
+  }
+}

@@ -210,16 +210,31 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <div>
-            <h2
-              style={{
-                color: "#ffffff",
-                fontSize: "24px",
-                fontWeight: 700,
-                marginBottom: "28px",
-              }}
-            >
-              Quick Links
-            </h2>
+<h2
+  style={{
+    color: "#ffffff",
+    fontSize: "24px",
+    fontWeight: 700,
+    marginBottom: "28px",
+    position: "relative",
+    display: "inline-block",
+    paddingBottom: "10px",
+  }}
+>
+  Quick Links
+
+  <span
+    style={{
+      position: "absolute",
+      left: 0,
+      bottom: 0,
+      width: "60%",
+      height: "3px",
+      background: "#EB631D",
+      borderRadius: "5px",
+    }}
+  />
+</h2>
 
             <ul
               style={{
@@ -298,16 +313,31 @@ export default function Footer() {
 
           {/* SERVICES */}
           <div>
-            <h2
-              style={{
-                color: "#ffffff",
-                fontSize: "24px",
-                fontWeight: 600,
-                marginBottom: "28px",
-              }}
-            >
-              Our Services
-            </h2>
+       <h2
+  style={{
+    color: "#ffffff",
+    fontSize: "24px",
+    fontWeight: 700,
+    marginBottom: "28px",
+    position: "relative",
+    display: "inline-block",
+    paddingBottom: "10px",
+  }}
+>
+  Our Services
+
+  <span
+    style={{
+      position: "absolute",
+      left: 0,
+      bottom: 0,
+      width: "60%",
+      height: "3px",
+      background: "#EB631D",
+      borderRadius: "5px",
+    }}
+  />
+</h2>
 
             <ul
               style={{
@@ -384,16 +414,31 @@ export default function Footer() {
 
           {/* SOCIAL */}
           <div>
-            <h2
-              style={{
-                color: "#ffffff",
-                fontSize: "24px",
-                fontWeight: 600,
-                marginBottom: "28px",
-              }}
-            >
-              Follow Us
-            </h2>
+       <h2
+  style={{
+    color: "#ffffff",
+    fontSize: "24px",
+    fontWeight: 700,
+    marginBottom: "28px",
+    position: "relative",
+    display: "inline-block",
+    paddingBottom: "10px",
+  }}
+>
+  Follow Us
+
+  <span
+    style={{
+      position: "absolute",
+      left: 0,
+      bottom: 0,
+      width: "60%",
+      height: "3px",
+      background: "#EB631D",
+      borderRadius: "5px",
+    }}
+  />
+</h2>
 
             <div
               style={{

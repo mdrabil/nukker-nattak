@@ -74,6 +74,7 @@ import AwarenessBanner from "@/components/AwarenessBanner";
 import Home2 from "@/components/Home2";
 import Home3 from "@/components/Home3";
 import Home4 from "@/components/Home4";
+import Home5 from "@/components/Home5";
 
 export default function Home() {
 
@@ -124,6 +125,7 @@ export default function Home() {
    </div>
    <Home3 />
    <Home4 />
+   <Home5 />
 
     </div>
   );

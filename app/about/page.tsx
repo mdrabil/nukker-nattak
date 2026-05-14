@@ -294,18 +294,18 @@ const AboutPage = () => {
       </div>
 
       {/* STORY */}
-      <div className="website-container">
+      {/* <div className="website-container">
         <OurStory />
       </div>
 
-      {/* WHY CHOOSE */}
+   
       <WhyChooseUs />
 
-      {/* MISSION + WHAT WE DO */}
+   
       <div className="website-container">
         <OurMission />
         <WhatWeDo />
-      </div>
+      </div> */}
 
       {/* RESPONSIVE CSS */}
       <style jsx>{`

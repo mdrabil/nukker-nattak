@@ -384,7 +384,7 @@ export default function Header() {
       position: "relative",
       height: "calc(100vh - 88px)",
       overflowY: "auto",
-      padding: "32px 24px",
+      padding: "0px 24px 35px 24px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
