@@ -195,7 +195,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Heading from "./common/Heading";
+
 import { Circle } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

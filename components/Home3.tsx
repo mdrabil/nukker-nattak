@@ -142,7 +142,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Heading from "./common/Heading";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HeadingUpdate } from "./common/HeadingUpdate";
