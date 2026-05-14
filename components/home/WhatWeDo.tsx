@@ -125,7 +125,7 @@ const WhatWeDo = () => {
             font-size: 14px;
             line-height: 22px;
 
-            text-align: left;
+            text-align: center;
           }
         }
       `}</style>

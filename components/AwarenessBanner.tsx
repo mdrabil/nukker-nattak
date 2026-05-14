@@ -1,226 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-// import { useEffect, useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export default function AwarenessBanner() {
-//   const sectionRef = useRef<HTMLDivElement | null>(null);
-//   const textRef = useRef<HTMLDivElement | null>(null);
-
-//   useEffect(() => {
-//     if (!sectionRef.current || !textRef.current) return;
-
-//     const ctx = gsap.context(() => {
-//       const tl = gsap.timeline();
-
-//       // TOP TEXT
-//       tl.fromTo(
-//         textRef.current!.children[0],
-//         {
-//           y: 40,
-//           opacity: 0,
-//         },
-//         {
-//           y: 0,
-//           opacity: 1,
-//           duration: 0.8,
-//           ease: "power3.out",
-//         }
-//       );
-
-//       // HEADING
-//       tl.fromTo(
-//         textRef.current!.children[1],
-//         {
-//           y: 80,
-//           opacity: 0,
-//         },
-//         {
-//           y: 0,
-//           opacity: 1,
-//           duration: 1,
-//           ease: "power3.out",
-//         },
-//         "-=0.4"
-//       );
-
-//       // SUB TEXT
-//       tl.fromTo(
-//         textRef.current!.children[2],
-//         {
-//           y: 40,
-//           opacity: 0,
-//         },
-//         {
-//           y: 0,
-//           opacity: 1,
-//           duration: 0.8,
-//           ease: "power3.out",
-//         },
-//         "-=0.5"
-//       );
-
-//       // BUTTONS
-//       tl.fromTo(
-//         textRef.current!.children[3].children,
-//         {
-//           y: 30,
-//           opacity: 0,
-//           scale: 0.9,
-//         },
-//         {
-//           y: 0,
-//           opacity: 1,
-//           scale: 1,
-//           stagger: 0.15,
-//           duration: 0.6,
-//           ease: "back.out(1.7)",
-//         },
-//         "-=0.3"
-//       );
-
-//       ScrollTrigger.refresh();
-//     }, sectionRef);
-
-//     return () => {
-//       ctx.revert();
-//       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-//     };
-//   }, []);
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       style={{
-//         width: "100%",
-//         minHeight: "100vh",
-//         backgroundImage: "url('/images/home.png')",
-//         backgroundSize: "cover",
-//         backgroundPosition: "center",
-//         backgroundRepeat: "no-repeat",
-//         display: "flex",
-//         alignItems: "center",
-//         overflow: "hidden",
-//         padding: "90px 20px",
-//       }}
-//     >
-//       <div
-//         className="website-container"
-//         style={{
-//           width: "100%",
-//           display: "flex",
-//           justifyContent: "flex-start",
-//         }}
-//       >
-//         <div
-//           ref={textRef}
-//           style={{
-//             maxWidth: "700px",
-//             width: "100%",
-//             display: "flex",
-//             flexDirection: "column",
-//             gap: "14px",
-//           }}
-//         >
-//           {/* TOP TEXT */}
-//           <p
-//             style={{
-//               color: "#F6A623",
-//               fontSize: "clamp(13px, 2.5vw, 17px)",
-//               fontWeight: 600,
-//               margin: 0,
-//             }}
-//           >
-//             Book India’s #1 Street Play Agency for
-//           </p>
-
-//           {/* HEADING */}
-//           <h1
-//             style={{
-//               color: "#fff",
-//               fontSize: "clamp(26px, 6vw, 60px)",
-//               lineHeight: "1.1",
-//               fontWeight: 800,
-//               margin: 0,
-//             }}
-//           >
-//             Awareness Campaigns & Brand{" "}
-//             <span style={{ color: "#F6A623" }}>Activations</span>
-//           </h1>
-
-//           {/* SUB TEXT */}
-//           <p
-//             style={{
-//               color: "white",
-//               fontSize: "clamp(12px, 2.2vw, 15px)",
-//               lineHeight: "22px",
-//               margin: 0,
-//               maxWidth: "100%",
-//             }}
-//           >
-//             Trusted by NGOs, SMBs, B2B & Leading Organizations
-//           </p>
-
-//           {/* BUTTONS */}
-//           <div
-//             style={{
-//               display: "flex",
-//               alignItems: "center",
-//               gap: "12px",
-//               flexWrap: "wrap",
-//               marginTop: "10px",
-//               flexDirection: "row",
-//             }}
-//           >
-//             <Link
-//               href="/contact"
-//               style={{
-//                 textDecoration: "none",
-//                 backgroundImage: "url('/images/header1.png')",
-//                 backgroundSize: "contain",
-//                 backgroundPosition: "center",
-//                 backgroundRepeat: "no-repeat",
-//                 padding: "14px 22px",
-//                 color: "#fff",
-//                 fontSize: "14px",
-//                 fontWeight: 700,
-//                 display: "inline-flex",
-//                 alignItems: "center",
-//                 justifyContent: "center",
-//               }}
-//             >
-//               Get a Free Quote →
-//             </Link>
-
-//             <Link
-//               href="/work"
-//               style={{
-//                 background: "transparent",
-//                 color: "#fff",
-//                 padding: "10px 22px",
-//                 border: "2px solid white",
-//                 borderRadius: "10px",
-//                 textDecoration: "none",
-//                 fontSize: "14px",
-//                 fontWeight: 700,
-//                 display: "inline-flex",
-//                 alignItems: "center",
-//                 justifyContent: "center",
-//               }}
-//             >
-//               Watch Our Work ▶
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import Link from "next/link";
@@ -244,7 +21,6 @@ export default function AwarenessBanner() {
         },
       });
 
-      // TOP TEXT
       tl.fromTo(
         textRef.current!.children[0],
         {
@@ -260,7 +36,6 @@ export default function AwarenessBanner() {
         }
       );
 
-      // HEADING
       tl.fromTo(
         textRef.current!.children[1],
         {
@@ -275,7 +50,6 @@ export default function AwarenessBanner() {
         "-=0.4"
       );
 
-      // SUB TEXT
       tl.fromTo(
         textRef.current!.children[2],
         {
@@ -290,7 +64,6 @@ export default function AwarenessBanner() {
         "-=0.5"
       );
 
-      // BUTTONS
       tl.fromTo(
         textRef.current!.children[3].children,
         {
@@ -314,11 +87,27 @@ export default function AwarenessBanner() {
   }, []);
 
   return (
-<section
-  ref={sectionRef}
-  className="hero-mobile"
-  style={styles.hero}
->
+    <section
+      ref={sectionRef}
+      style={{
+        width: "100%",
+        minHeight: "auto",
+
+        background:
+          "url('/images/home.png') top / cover no-repeat",
+
+        display: "flex",
+        alignItems: "center",
+
+        overflow: "hidden",
+
+        paddingTop: "100px",
+        paddingBottom: "200px",
+        paddingLeft: "20px",
+        paddingRight: "20px",
+      }}
+      className="hero-mobile"
+    >
       <div
         className="website-container"
         style={{
@@ -343,13 +132,12 @@ export default function AwarenessBanner() {
             backfaceVisibility: "hidden",
           }}
         >
-          {/* TOP TEXT */}
           <div>
             <p
               style={{
                 color: "#F6A623",
                 fontSize: "clamp(13px, 2.5vw, 17px)",
-                whiteSpace:"nowrap",
+                whiteSpace: "nowrap",
                 fontWeight: 600,
                 margin: 0,
               }}
@@ -357,7 +145,6 @@ export default function AwarenessBanner() {
               Book India’s #1 Street Play Agency for
             </p>
 
-            {/* BORDER */}
             <div
               style={{
                 width: "50px",
@@ -369,7 +156,6 @@ export default function AwarenessBanner() {
             />
           </div>
 
-          {/* HEADING */}
           <h1
             style={{
               color: "#fff",
@@ -385,7 +171,6 @@ export default function AwarenessBanner() {
             </span>
           </h1>
 
-          {/* SUB TEXT */}
           <p
             style={{
               color: "white",
@@ -398,19 +183,15 @@ export default function AwarenessBanner() {
             Trusted by NGOs, SMBs, B2B & Leading Organizations
           </p>
 
-          {/* BUTTONS */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: "12px",
-
               flexWrap: "wrap",
-
               marginTop: "10px",
             }}
           >
-            {/* BUTTON 1 */}
             <Link
               href="/contact"
               style={{
@@ -431,8 +212,7 @@ export default function AwarenessBanner() {
                 alignItems: "center",
                 justifyContent: "center",
 
-                transition:
-                  "all 0.35s ease",
+                transition: "all 0.35s ease",
 
                 transform: "scale(1)",
               }}
@@ -452,7 +232,6 @@ export default function AwarenessBanner() {
               Get a Free Quote →
             </Link>
 
-            {/* BUTTON 2 */}
             <Link
               href="/work"
               style={{
@@ -473,8 +252,7 @@ export default function AwarenessBanner() {
                 alignItems: "center",
                 justifyContent: "center",
 
-                transition:
-                  "all 0.35s ease",
+                transition: "all 0.35s ease",
 
                 transform: "scale(1)",
               }}
@@ -503,47 +281,21 @@ export default function AwarenessBanner() {
             </Link>
           </div>
         </div>
-<style jsx>{`
-  .hero-mobile {
-    overflow: hidden;
-  }
-
-  @media (max-width: 768px) {
-    .hero-mobile {
-      min-height: auto !important;
-      height: auto !important;
-   
-
-      padding: 120px 20px 70px 20px !important;
-    }
-  }
-`}</style>
       </div>
+
+      <style global jsx>{`
+        @media (max-width: 768px) {
+          .hero-mobile {
+            min-height: auto !important;
+            height: auto !important;
+
+            background: url("/images/mobile-banner1.jpeg")
+              center center / cover no-repeat !important;
+
+            padding: 120px 20px 70px 20px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
-
-
-const styles: any = {
-  hero: {
-    width: "100%",
-
-    minHeight: "auto",
-
-    backgroundImage: "url('/images/home.png')",
-
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-
-    display: "flex",
-    alignItems: "center",
-
-    overflow: "hidden",
-
-    paddingTop: "100px",
-    paddingBottom: "200px",
-    paddingLeft: "20px",
-    paddingRight: "20px",
-  },
-};

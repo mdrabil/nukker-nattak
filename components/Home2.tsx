@@ -319,7 +319,7 @@ padding-top:20px;
         }
 
         .gridItem {
-         width: calc(50% - 10px);
+         width: calc(40% - 10px);
 
           flex: 0 0 auto;
 
