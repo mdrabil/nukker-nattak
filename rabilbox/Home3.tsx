@@ -137,15 +137,12 @@
 
 // export default Home3;
 
-
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
 import Heading from "./common/Heading";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { HeadingUpdate } from "./common/HeadingUpdate";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -153,65 +150,6 @@ const Home3 = () => {
   const gridRef = useRef<HTMLDivElement | null>(null);
   const headingWrapRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  // SERVICES DATA
-  const services = [
-    {
-      id: 1,
-      image: "/images/service1.png",
-      title: "Street Play Campaigns",
-    },
-    {
-      id: 2,
-      image: "/images/service2.png",
-      title: "Social Awareness Drives",
-    },
-    {
-      id: 3,
-      image: "/images/service3.png",
-      title: "Election Awareness",
-    },
-    {
-      id: 4,
-      image: "/images/service4.png",
-      title: "Health Awareness",
-    },
-    {
-      id: 5,
-      image: "/images/service5.png",
-      title: "Women Empowerment",
-    },
-    {
-      id: 6,
-      image: "/images/service6.png",
-      title: "Environmental Campaigns",
-    },
-    {
-      id: 7,
-      image: "/images/service7.png",
-      title: "Youth Engagement",
-    },
-    {
-      id: 8,
-      image: "/images/service8.png",
-      title: "Education Awareness",
-    },
-    {
-      id: 9,
-      image: "/images/service9.png",
-      title: "CSR Activities",
-    },
-    {
-      id: 10,
-      image: "/images/service10.png",
-      title: "Public Interaction Programs",
-    },
-    {
-      id: 11,
-      image: "/images/service11.png",
-      title: "Brand Promotions",
-    },
-  ];
 
   useEffect(() => {
     if (
@@ -223,6 +161,7 @@ const Home3 = () => {
     }
 
     const ctx = gsap.context(() => {
+
       // HEADING ANIMATION
       gsap.fromTo(
         headingWrapRef.current,
@@ -233,8 +172,9 @@ const Home3 = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 1.1,
           ease: "power2.out",
+          force3D: true,
 
           scrollTrigger: {
             trigger: headingWrapRef.current,
@@ -244,11 +184,11 @@ const Home3 = () => {
         }
       );
 
-      // CARD ANIMATION
+      // GRID ITEMS ANIMATION
       gsap.fromTo(
         gridRef.current!.children,
         {
-          y: 60,
+          y: 70,
           opacity: 0,
           scale: 0.96,
         },
@@ -256,9 +196,10 @@ const Home3 = () => {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.9,
-          stagger: 0.12,
+          duration: 1,
+          stagger: 0.18,
           ease: "power2.out",
+          force3D: true,
 
           scrollTrigger: {
             trigger: gridRef.current,
@@ -267,9 +208,11 @@ const Home3 = () => {
           },
         }
       );
+
     }, sectionRef);
 
     return () => ctx.revert();
+
   }, []);
 
   return (
@@ -278,77 +221,42 @@ const Home3 = () => {
       style={{
         width: "100%",
         overflow: "hidden",
+        // padding: "40px 0px",
       }}
     >
       {/* HEADING */}
       <div ref={headingWrapRef}>
-           <HeadingUpdate
-                         title="Our"
-                         color="black"
-                         title2={true}
-                         title2Text="Services"
-                         mobileSize="24px"
-                         desktopSize="50px"
-                       />
+        <Heading />
       </div>
 
-      <div className="website-container">
-        {/* ROW 1 */}
-        <div className="row row3" ref={gridRef}>
-          {services.slice(0, 3).map((item) => (
-            <div key={item.id} className="gridItem gsap-box">
+      <div
+        className="website-container"
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "35px",
+        }}
+      >
+        {/* GRID */}
+        <div ref={gridRef} className="responsiveGrid">
+          {[5, 6, 7, 8].map((item) => (
+            <div
+              key={item}
+              className="gridItem"
+            >
               <img
-                src={item.image}
-                alt={item.title}
-                className="image"
+                src={`/images/home${item}.png`}
+                alt="Partner"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                }}
               />
-
-              <h2 className="title">{item.title}</h2>
-            </div>
-          ))}
-        </div>
-
-        {/* ROW 2 */}
-        <div className="row row2">
-          {services.slice(3, 5).map((item) => (
-            <div key={item.id} className="gridItem gsap-box">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="image"
-              />
-
-              <h2 className="title">{item.title}</h2>
-            </div>
-          ))}
-        </div>
-
-        {/* ROW 3 */}
-        <div className="row row3">
-          {services.slice(5, 8).map((item) => (
-            <div key={item.id} className="gridItem gsap-box">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="image"
-              />
-
-              <h2 className="title">{item.title}</h2>
-            </div>
-          ))}
-        </div>
-
-        {/* ROW 4 */}
-        <div className="row row3">
-          {services.slice(8, 11).map((item) => (
-            <div key={item.id} className="gridItem gsap-box">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="image"
-              />
-
-              <h2 className="title">{item.title}</h2>
             </div>
           ))}
         </div>
@@ -356,81 +264,65 @@ const Home3 = () => {
 
       {/* CSS */}
       <style jsx>{`
-    
-
-        .row {
+        .responsiveGrid {
           width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin-bottom: 30px;
-          flex-wrap: wrap;
-          padding:0px 100px
-        }
-
-        .row3 .gridItem {
-          width: calc(33.33% - 20px);
-        }
-
-        .row2 .gridItem {
-          width: calc(50% - 20px);
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap:20px
         }
 
         .gridItem {
+          position: relative;
+
           display: flex;
-          flex-direction: column;
-          gap: 10px;
-          border-radius: 20px;
-          overflow: hidden;
+          align-items: center;
+          justify-content: center;
+
+          padding: 10px;
+
           will-change: transform, opacity;
-        }
 
-     .image {
-  width:100%;
-  height: 80%;
-
-  object-fit: contain;
-  display: block;
-  border-radius: 20px;
-
-}
-
-        .title {
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 1.4;
-          text-align: center;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         /* MOBILE */
-        @media (max-width: 767px) {
-
-          .row {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 30px;
-          margin-bottom: 30px;
-          flex-wrap: wrap;
-          padding:0px 0px
+        .gridItem::after {
+          display: none;
         }
 
-          .row3 .gridItem,
-          .row2 .gridItem {
-            width: 100%;
+        /* DESKTOP */
+        @media (min-width: 1024px) {
+          .responsiveGrid {
+            grid-template-columns: repeat(4, 1fr);
           }
 
-          .image {
-            height: auto;
+          .gridItem::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            width: 5px;
+            height: 100%;
+
+            background: linear-gradient(
+              to bottom,
+              black 0%,
+              black 30%,
+              black 100%
+            );
+
+            display: block;
           }
 
-          .row {
-            gap: 20px;
-            margin-bottom: 20px;
+          /* REMOVE LAST BORDER */
+          .gridItem:last-child::after {
+            display: none;
           }
 
-          .title {
-            font-size: 16px;
+          .gridItem:nth-child(4n)::after {
+            display: none;
           }
         }
       `}</style>

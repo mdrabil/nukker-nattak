@@ -105,7 +105,7 @@ const Home5 = () => {
                     color="black"
                     title2={true}
                     title2Text="Work So Well"
-                    mobileSize="20px"
+                    mobileSize="24px"
                     desktopSize="50px"
                   />
       </div>
@@ -118,11 +118,7 @@ const Home5 = () => {
 
       return (
         <div key={index} className="filterCard gsap-box">
-          {/* <img src={item.image} className="filterImg" /> */}
-
-          {/* <div className="filterImg">
-
-          </div > */}
+    
 
      <div className="gsap-icon">
 
@@ -135,7 +131,14 @@ const Home5 = () => {
             {item.desc}</p>
 
    
-          {!isLast && <span className="borderLine" />}
+          {/* {!isLast && <span className="borderLine" />} */}
+          {!isLast && (
+  <img
+    src="/images/borderline.png"
+    alt="divider"
+    className="borderLine"
+  />
+)}
         </div>
       );
     })}
@@ -149,19 +152,19 @@ const Home5 = () => {
                     color="black"
                     title2={true}
                     title2Text="Change"
-                    mobileSize="20px"
+                    mobileSize="24px"
                     desktopSize="50px"
                   />
 <div style={{ marginBottom: "50px" }}>
-  <h3
+  <span className="gsap-text"
     style={{
-      fontSize: "clamp(16px, 3vw, 30px)", // 👈 mobile 18px, desktop 30px
+      fontSize: "clamp(16px, 3vw, 25px)", // 👈 mobile 18px, desktop 30px
       fontWeight: "700",
     }}
   >
     Join hands with us to create awareness, inspire communities, and drive meaningful
     social impact through powerful street performances and engaging public campaigns.
-  </h3>
+  </span>
 </div>
                     </div>
       </div>
@@ -203,14 +206,38 @@ const Home5 = () => {
 }
 
 /* ===== FULL HEIGHT BORDER ===== */
+// .borderLine {
+//   position: absolute;
+//   right: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+
+//   width: 4px;
+//   height: 100%;
+
+//   background: linear-gradient(
+//     to bottom,
+//     transparent,
+//     rgba(0, 0, 0, 0.15),
+//     rgba(0, 0, 0, 0.8),
+//     rgba(0, 0, 0, 0.15),
+//     transparent
+//   );
+
+//   border-radius: 999px;
+// }
+
 .borderLine {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 16px;   /* image width */
   height: 100%;
-  width: 1px;
-  background: #000; /* black border */
-  opacity: 0.4;
+
+  object-fit: fill;
+  pointer-events: none;
 }
 
 /* REMOVE BORDER ON LAST */
@@ -236,13 +263,8 @@ const Home5 = () => {
   font-weight: 300;
 }
 
-/* CENTER ON DESKTOP */
-@media (min-width: 1024px) {
-  .filterScroll {
-    justify-content: center;
-    overflow-x: hidden;
-  }
-}
+
+
 
      
 
@@ -254,14 +276,17 @@ const Home5 = () => {
 
        
 
-        @media (min-width: 1024px) {
-        
+      @media (min-width: 1024px) {
+  .filterScroll {
+    justify-content: center;
+    overflow-x: visible; /* change this */
+   
+  }
 
-          .filterScroll {
-            justify-content: center;
-            overflow-x: hidden;
-          }
-        }
+  .filterCard {
+    width: 260px; /* slightly flexible */
+  }
+}
       `}</style>
     </div>
   );

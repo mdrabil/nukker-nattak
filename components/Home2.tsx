@@ -99,83 +99,15 @@
 // };
 
 // export default Home2;
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Home2 = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const titleRef = useRef<HTMLHeadingElement | null>(null);
-  const imgRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (
-      !sectionRef.current ||
-      !titleRef.current ||
-      !imgRef.current
-    ) {
-      return;
-    }
 
-    const ctx = gsap.context(() => {
-
-      // TITLE ANIMATION
-      gsap.fromTo(
-        titleRef.current,
-        {
-          y: 50,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.1,
-          ease: "power2.out",
-          force3D: true,
-
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        }
-      );
-
-      // IMAGE GRID ANIMATION
-      gsap.fromTo(
-       imgRef.current!.children,
-        {
-          y: 70,
-          opacity: 0,
-          scale: 0.96,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          stagger: 0.18,
-          ease: "power2.out",
-          force3D: true,
-
-          scrollTrigger: {
-            trigger: imgRef.current,
-            start: "top 88%",
-            once: true,
-          },
-        }
-      );
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-
-  }, []);
 
   return (
     <div
@@ -198,9 +130,11 @@ const Home2 = () => {
           gap: "35px",
         }}
       >
+
         {/* HEADING */}
+
         <h2
-          ref={titleRef}
+          className="gsap-heading"
           style={{
             margin: 0,
             textAlign: "center",
@@ -216,24 +150,17 @@ const Home2 = () => {
         </h2>
 
         {/* GRID */}
-        <div
-          ref={imgRef}
-          className="responsiveGrid"
-        >
-          {[1, 2, 3, 4].map((item) => (
+
+        <div className="responsiveGrid gsap-stagger-wrap">
+          {[1, 4, 3, 2].map((item) => (
             <div
               key={item}
-              className="gridItem"
+              className="gridItem gsap-box"
             >
               <img
                 src={`/images/home${item}.png`}
                 alt={`Campaign ${item}`}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "contain",
-                  display: "block",
-                }}
+                className="gridImage gsap-hover-text"
               />
             </div>
           ))}
@@ -241,32 +168,48 @@ const Home2 = () => {
       </div>
 
       {/* CSS */}
+
       <style jsx>{`
         .responsiveGrid {
           width: 100%;
 
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          display: flex;
+          flex-wrap: wrap;
 
-          gap: 30px;
+          justify-content: center;
+          align-items: center;
 
-          align-items: end;
+          gap: 20px;
         }
 
         .gridItem {
-          will-change: transform, opacity;
+          width: calc(50% - 10px);
 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .gridImage {
+          width: 100%;
+          max-width: 220px;
+          height: 180px;
+
+          object-fit: contain;
+          display: block;
+
+          will-change: transform, opacity;
           transform: translateZ(0);
           backface-visibility: hidden;
         }
 
         @media (min-width: 1024px) {
           .responsiveGrid {
-            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+          }
 
-            gap: 50px;
-
-            align-items: end;
+          .gridItem {
+            width: auto;
           }
         }
       `}</style>

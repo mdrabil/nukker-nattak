@@ -75,6 +75,8 @@ import Home2 from "@/components/Home2";
 import Home3 from "@/components/Home3";
 import Home4 from "@/components/Home4";
 import Home5 from "@/components/Home5";
+import WhatWeDo from "@/components/home/WhatWeDo";
+import WhoAreWe from "@/components/home/WhoAreWe";
 
 export default function Home() {
 
@@ -119,8 +121,11 @@ export default function Home() {
 
 
    <AwarenessBanner/>
+   
     
    <div className="website-container">
+    <WhoAreWe/>
+    <WhatWeDo/>
    <Home2/>
    </div>
    <Home3 />

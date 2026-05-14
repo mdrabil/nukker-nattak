@@ -220,14 +220,14 @@ const Home4 = () => {
     {
       image: "/images/home10.png",
       bgImage: "/images/homeblack1.png",
-      title: "BSES Energy Awareness",
+          title: "Swachh Bharat Drive",
       buttonTitle: "View More",
       icon: <Circle size={14} />,
     },
     {
       image: "/images/home11.png",
       bgImage: "/images/homeblack1.png",
-      title: "Election Awareness Drive",
+           title: "Swachh Bharat Drive",
       buttonTitle: "View More",
       icon: <Circle size={14} />,
     },
@@ -307,7 +307,7 @@ const Home4 = () => {
                     color="black"
                     title2={true}
                     title2Text="Campaigns"
-                    mobileSize="20px"
+                    mobileSize="24px"
                     desktopSize="50px"
                   />
       </div>
@@ -411,7 +411,7 @@ const Home4 = () => {
           background-position: center;
 
           display: flex;
-          align-items: center;
+          align-items: start;
           justify-content: space-between;
 
           gap: 16px;
@@ -420,11 +420,18 @@ const Home4 = () => {
           flex-wrap: wrap;
         }
 
-        .title {
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 1.4;
-        }
+  .title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+}
 
         .buttonWrap {
           display: flex;
@@ -454,6 +461,7 @@ const Home4 = () => {
           font-size: inherit;
           font-weight: inherit;
           cursor: pointer;
+          white-space:nowrap
         }
 
         @media (min-width: 768px) {
