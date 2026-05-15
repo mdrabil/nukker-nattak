@@ -420,7 +420,8 @@ const Home4 = () => {
                 <div
                   className="bottomBox"
                   style={{
-                    backgroundImage: `url(${item.bgImage})`,
+                    backgroundImage: `url("/images/download.svg")`,
+                    backgroundColor:"#000000"
                   }}
                 >
                   {/* TITLE */}

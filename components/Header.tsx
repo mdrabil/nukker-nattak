@@ -62,7 +62,7 @@ export default function Header() {
     width: "100%",
     zIndex: 999,
     overflow: "hidden",
-backgroundColor:"black"
+
   }}
 >
         <div className="website-container-without-img">
@@ -71,6 +71,21 @@ backgroundColor:"black"
               position: "relative",
             }}
           >
+         {/* HEADER BOTTOM LINE */}
+<div
+  style={{
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    height: "2px",
+    background:
+      "linear-gradient(90deg, rgba(255,255,255,0), rgba(235,99,29,0.9), rgba(255,255,255,0))",
+    opacity: 0.9,
+    boxShadow: "0 0 12px rgba(235,99,29,0.7)",
+    zIndex: 30,
+  }}
+/>
             {/* MAIN */}
             <div
               style={{

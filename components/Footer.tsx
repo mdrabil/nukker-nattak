@@ -92,6 +92,36 @@ export default function Footer() {
   
       }}
     >
+      {/* TOP GLOW LINE */}
+{/* <div
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "10px",
+    background:
+      "linear-gradient(90deg, rgba(255,255,255,0), rgba(235,99,29,1), rgba(255,255,255,0))",
+    boxShadow: "0 0 12px rgba(235,99,29,0.7)",
+    zIndex: 20,
+  }}
+/> */}
+{/* TOP LINE WITH BACKGROUND IMAGE */}
+<div
+  style={{
+    position: "absolute",
+    top: -5,
+    left: 0,
+    width: "100%",
+    height: "12px",
+    backgroundImage: "url('/images/footerline.png')",
+    backgroundRepeat: "repeat-x",
+    backgroundPosition: "center",
+    backgroundSize: "contain",
+    zIndex: 20,
+    opacity: 0.95,
+  }}
+/>
       <div
       className="website-container-without-img main-padding-top"
         style={{
@@ -537,7 +567,7 @@ export default function Footer() {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            paddingBottom:"40px",
+            paddingBottom:"20px",
             paddingTop:"20px"
           }}
         >

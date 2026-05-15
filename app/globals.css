@@ -92,7 +92,8 @@ max-width: 1900px;
   width:100%;
   /* max-width:var(--container-width); */
   margin-inline:auto;
-  background-color: #1a1008;
+  background-color: #000000;
+  /* background-color: #1a1008; */
   background-image:url('/images/download.svg');
   background-size:cover;
   background-position:center;
@@ -243,7 +244,7 @@ max-width: 1900px;
 @media (max-width:992px){
 
   :root{
-    --padding-y:100px;
+    --padding-y:60px;
     --padding-x:20px;
 
     --text-sm:15px;
@@ -259,7 +260,7 @@ max-width: 1900px;
 @media (max-width:768px){
 
   :root{
-    --padding-y:100px;
+    --padding-y:60px;
     --padding-x:20px;
 
     --text-sm:14px;
@@ -273,7 +274,7 @@ max-width: 1900px;
 @media (max-width:480px){
 
   :root{
-    --padding-y:80px;
+    --padding-y:60px;
     --padding-x:20px;
 
     --text-sm:13px;
