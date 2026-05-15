@@ -712,7 +712,7 @@ const Services = () => {
         .gridItem {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 1px;
           border-radius: 20px;
           overflow: hidden;
           will-change: transform, opacity;
