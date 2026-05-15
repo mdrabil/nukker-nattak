@@ -229,7 +229,7 @@ export default function AwarenessBanner() {
                   "brightness(1)";
               }}
             >
-              Get a Free Quote →
+              Enquiry Now →
             </Link>
 
             <Link
