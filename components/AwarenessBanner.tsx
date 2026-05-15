@@ -136,7 +136,7 @@ export default function AwarenessBanner() {
             <p
               style={{
                 color: "#F6A623",
-                fontSize: "clamp(13px, 2.5vw, 17px)",
+                fontSize: "clamp(12px, 2.5vw, 16px)",
                 whiteSpace: "nowrap",
                 fontWeight: 600,
                 margin: 0,
@@ -159,7 +159,7 @@ export default function AwarenessBanner() {
           <h1
             style={{
               color: "#fff",
-              fontSize: "clamp(26px, 6vw, 60px)",
+              fontSize: "clamp(20px, 6vw, 40px)",
               lineHeight: "1.1",
               fontWeight: 800,
               margin: 0,
@@ -174,7 +174,7 @@ export default function AwarenessBanner() {
           <p
             style={{
               color: "white",
-              fontSize: "clamp(12px, 2.2vw, 15px)",
+              fontSize: "clamp(12px, 2.2vw, 16px)",
               lineHeight: "22px",
               margin: 0,
               maxWidth: "100%",

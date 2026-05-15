@@ -64,19 +64,19 @@ export default function Footer() {
 
   const socials = [
     {
-      icon: <TiSocialFacebook size={18} />,
+      icon: <TiSocialFacebook size={15} />,
       link: "#",
     },
     {
-      icon: <FaLinkedinIn size={18} />,
+      icon: <FaLinkedinIn size={15} />,
       link: "#",
     },
     {
-      icon: <FaPlay size={18} />,
+      icon: <FaPlay size={15} />,
       link: "#",
     },
     {
-      icon: <IoIosPause size={18} />,
+      icon: <IoIosPause size={15} />,
       link: "#",
     },
   ];
@@ -87,10 +87,9 @@ export default function Footer() {
         position: "relative",
         width: "100%",
         overflow: "hidden",
-        backgroundImage: "url('/images/footer-bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
+        backgroundColor:"#1a1008",
+        backgroundImage: "url('/images/download.svg')",
+  
       }}
     >
       <div
@@ -114,7 +113,7 @@ export default function Footer() {
             gridTemplateColumns:
               "repeat(auto-fit,minmax(220px,1fr))",
             gap: "30px",
-            paddingBottom: "10px",
+            paddingBottom: "5px",
           }}
         >
           {/* LEFT */}
@@ -122,13 +121,13 @@ export default function Footer() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "18px",
+              gap: "15px",
             }}
           >
             <Image
               src="/images/logo1.png"
               alt="Logo"
-              width={180}
+              width={150}
               height={80}
               style={{
                 objectFit: "contain",
@@ -139,8 +138,8 @@ export default function Footer() {
             <p
               style={{
                 color: "white",
-                fontSize: "14px",
-                lineHeight: "30px",
+                fontSize: "12px",
+                lineHeight: "24px",
                 maxWidth: "450px",
               }}
             >
@@ -166,7 +165,7 @@ export default function Footer() {
                 <div
                   style={{
                     width: "25px",
-                    height: "44px",
+                    height: "15px",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
@@ -185,7 +184,7 @@ export default function Footer() {
                 <span
                   style={{
                     color: "rgba(255,255,255,0.8)",
-                    fontSize: "14px",
+                    fontSize: "12px",
                   }}
                 >
                   +91 98765 43210
@@ -221,7 +220,7 @@ export default function Footer() {
                 <span
                   style={{
                     color: "rgba(255,255,255,0.8)",
-                    fontSize: "14px",
+                    fontSize: "12px",
                     wordBreak: "break-all",
                   }}
                 >
@@ -236,12 +235,12 @@ export default function Footer() {
 <h2
   style={{
     color: "#ffffff",
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: 700,
-    marginBottom: "28px",
+    marginBottom: "20px",
     position: "relative",
     display: "inline-block",
-    paddingBottom: "10px",
+    paddingBottom: "5px",
   }}
 >
   Quick Links
@@ -263,7 +262,7 @@ export default function Footer() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "16px",
+                gap: "10px",
                 listStyle: "none",
                 padding: 0,
                 margin: 0,
@@ -278,7 +277,7 @@ export default function Footer() {
                       display: "inline-block",
                       width: "fit-content",
                       color: "white",
-                      fontSize: "14px",
+                      fontSize: "12px",
                       fontWeight: 500,
                       textDecoration: "none",
                       transition: "all 0.3s ease",
@@ -339,9 +338,9 @@ export default function Footer() {
        <h2
   style={{
     color: "#ffffff",
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: 700,
-    marginBottom: "28px",
+    marginBottom: "20px",
     position: "relative",
     display: "inline-block",
     paddingBottom: "10px",
@@ -362,59 +361,64 @@ export default function Footer() {
   />
 </h2>
 
-            <ul
+              <ul
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "16px",
+                gap: "10px",
                 listStyle: "none",
                 padding: 0,
                 margin: 0,
               }}
             >
               {services.map((item) => (
-                <li
-                  key={item}
-                  style={{
-                    position: "relative",
-                    display: "inline-block",
-                    width: "fit-content",
-                    cursor: "pointer",
-                    color: "white",
-                    fontSize: "14px",
-                    fontWeight: 500,
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const target =
-                      e.currentTarget as HTMLElement;
+                           <li>
+                  <Link
+                    href=""
+                    style={{
+                      position: "relative",
+                      display: "inline-block",
+                      width: "fit-content",
+                      color: "white",
+                      fontSize: "12px",
+                      fontWeight: 500,
+                      textDecoration: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const target =
+                        e.currentTarget as HTMLElement;
 
-                    target.style.color = "#EB631D";
+                      target.style.color = "#EB631D";
 
-                    const line = target.querySelector(
-                      ".service-line"
-                    ) as HTMLElement;
+                      const line = target.querySelector(
+                        ".footer-line"
+                      ) as HTMLElement;
 
-                    if (line) {
-                      line.style.width = "100%";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    const target =
-                      e.currentTarget as HTMLElement;
+                      if (line) {
+                        line.style.width = "100%";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const target =
+                        e.currentTarget as HTMLElement;
 
-                    target.style.color =
-                      "white";
+                      target.style.color =
+                        "white";
 
-                    const line = target.querySelector(
-                      ".service-line"
-                    ) as HTMLElement;
+                      const line = target.querySelector(
+                        ".footer-line"
+                      ) as HTMLElement;
 
-                    if (line) {
-                      line.style.width = "0";
-                    }
-                  }}
-                >
+                      if (line) {
+                        line.style.width = "0";
+                      }
+                    }}
+                  >
+
+           
+       
+                
                   {item}
 
                   <span
@@ -430,7 +434,9 @@ export default function Footer() {
                       transition: "all 0.5s ease",
                     }}
                   />
+                         </Link>
                 </li>
+
               ))}
             </ul>
           </div>
@@ -440,12 +446,12 @@ export default function Footer() {
        <h2
   style={{
     color: "#ffffff",
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: 700,
-    marginBottom: "28px",
+    marginBottom: "20px",
     position: "relative",
     display: "inline-block",
-    paddingBottom: "10px",
+    paddingBottom: "5px",
   }}
 >
   Follow Us
@@ -467,7 +473,7 @@ export default function Footer() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "16px",
+                gap: "10px",
                 flexWrap: "wrap",
               }}
             >
@@ -477,8 +483,8 @@ export default function Footer() {
                   key={index}
                   style={{
                     position: "relative",
-                    width: "48px",
-                    height: "48px",
+                    width: "40px",
+                    height: "40px",
                     borderRadius: "50%",
                     border:
                       "1px solid rgba(255,255,255,0.1)",
@@ -531,12 +537,13 @@ export default function Footer() {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            paddingBottom:"20px"
+            paddingBottom:"40px",
+            paddingTop:"20px"
           }}
         >
           <p
             style={{
-              fontSize: "14px",
+              fontSize: "12px",
               color: "white",
               lineHeight: "30px",
             }}

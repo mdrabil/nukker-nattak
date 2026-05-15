@@ -380,8 +380,8 @@ const Home4 = () => {
                     color="black"
                     title2={true}
                     title2Text="Campaigns"
-                    mobileSize="24px"
-                    desktopSize="50px"
+                    mobileSize="25px"
+                    desktopSize="30px"
                   />
       </div>
 
@@ -484,7 +484,7 @@ const Home4 = () => {
           background-position: center;
 
           display: flex;
-          align-items: start;
+          align-items: center;
           justify-content: space-between;
 
           gap: 16px;
@@ -494,7 +494,7 @@ const Home4 = () => {
         }
 
   .title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
 
@@ -514,7 +514,7 @@ const Home4 = () => {
           padding: 8px 12px;
           border-radius: 6px;
 
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 700;
           letter-spacing: 1px;
 

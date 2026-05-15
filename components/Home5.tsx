@@ -329,31 +329,31 @@ const Home5 = () => {
       title: "Direct Communication",
       image: "/images/team1.png",
       desc: "Connects directly with people in their own environment.",
-      icon: <MessageCircle size={80} color="#EB631D" />,
+      icon: <MessageCircle size={45} color="#EB631D" />,
     },
     {
       title: "High Engagement",
       image: "/images/team1.png",
       desc: "Interactive, entertaining and easy to understand.",
-      icon: <Users size={80} color="#EB631D" />,
+      icon: <Users size={45} color="#EB631D" />,
     },
     {
       title: "Better Retention",
       image: "/images/team1.png",
       desc: "Messages are remembered for a long time.",
-      icon: <Clock3 size={80} color="#EB631D" />,
+      icon: <Clock3 size={45} color="#EB631D" />,
     },
     {
       title: "Cost Effective",
       image: "/images/team1.png",
       desc: "Maximum impact with minimal resources.",
-      icon: <Wallet size={80} color="#EB631D" />,
+      icon: <Wallet size={45} color="#EB631D" />,
     },
     {
       title: "Social Impact",
       image: "/images/team1.png",
       desc: "Encourages positive behavior and community participation.",
-      icon: <HeartHandshake size={80} color="#EB631D" />,
+      icon: <HeartHandshake size={45} color="#EB631D" />,
     },
   ];
 
@@ -494,8 +494,8 @@ const Home5 = () => {
           color="black"
           title2={true}
           title2Text="Work So Well"
-          mobileSize="24px"
-          desktopSize="50px"
+          mobileSize="25px"
+          desktopSize="30px"
         />
       </div>
 
@@ -513,13 +513,15 @@ const Home5 = () => {
 
                   <p>{item.desc}</p>
 
-                  {!isLast && (
+                     {!isLast && <span className="borderLine" />}
+
+                  {/* {!isLast && (
                     <img
                       src="/images/borderline.png"
                       alt="divider"
                       className="borderLine"
                     />
-                  )}
+                  )} */}
                 </div>
               );
             })}
@@ -543,14 +545,14 @@ const Home5 = () => {
             color="black"
             title2={true}
             title2Text="Change"
-            mobileSize="24px"
-            desktopSize="50px"
+            mobileSize="25px"
+            desktopSize="30px"
           />
 
           <div style={{ paddingBottom: "50px" }}>
             <span
               style={{
-                fontSize: "clamp(16px, 3vw, 20px)",
+                fontSize: "clamp(14px, 3vw, 16px)",
                 fontWeight: "500",
               }}
             >
@@ -575,7 +577,7 @@ const Home5 = () => {
           display: flex;
           gap: 0;
           overflow-x: auto;
-          padding: 10px 15px;
+          justify-content: center;
           scrollbar-width: none;
           scroll-behavior: smooth;
         }
@@ -586,14 +588,14 @@ const Home5 = () => {
 
         .filterCard {
           flex: 0 0 auto;
-          width: 280px;
+          width: 300px;
 
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
 
-          gap: 12px;
-          padding: 0px 20px;
+          gap: 8px;
+          padding: 0px 20px ;
 
           position: relative;
           text-align: center;
@@ -601,7 +603,9 @@ const Home5 = () => {
           transform-style: preserve-3d;
           will-change: transform, opacity;
         }
-
+.filterCard:first-child {
+  padding-left: 0;
+}
         .gsap-icon {
           transition: transform 0.4s ease;
         }
@@ -610,18 +614,29 @@ const Home5 = () => {
           transform: scale(1.08) rotate(5deg);
         }
 
+      
+
         .borderLine {
-          position: absolute;
-          right: -8px;
-          top: 50%;
-          transform: translateY(-50%);
+  position: absolute;
+  right: 2;
+  top: 50%;
+  transform: translateY(-50%);
+    background: linear-gradient(#0000, #c8b89a 20% 80%, #0000);
 
-          width: 16px;
-          height: 100%;
+  width: 2px;
+  height: 100%;
 
-          object-fit: fill;
-          pointer-events: none;
-        }
+  // background: linear-gradient(
+  //   to bottom,
+  //   transparent,
+  //   rgba(0, 0, 0, 0.15),
+  //   rgba(0, 0, 0, 0.8),
+  //   rgba(0, 0, 0, 0.15),
+  //   transparent
+  // );
+
+  border-radius: 999px;
+}
 
         .filterCard:last-child .borderLine {
           display: none;
@@ -634,13 +649,14 @@ const Home5 = () => {
         }
 
         .filterCard h2 {
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 700;
         }
 
         .filterCard p {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 300;
+          text-align:start
         }
 
         .dotsWrapper {
@@ -674,7 +690,7 @@ const Home5 = () => {
 
         @media (min-width: 1024px) {
           .filterScroll {
-            justify-content: center;
+        
             overflow-x: visible;
           }
 

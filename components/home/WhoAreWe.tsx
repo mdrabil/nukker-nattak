@@ -79,8 +79,8 @@ const WhoAreWe = () => {
           color="black"
           title2={true}
           title2Text="We Are"
-          mobileSize="24px"
-          desktopSize="50px"
+          mobileSize="25px"
+          desktopSize="30px"
         />
       </div>
 
@@ -112,7 +112,7 @@ const WhoAreWe = () => {
           line-height: 24px;
           font-weight: 400;
 
-          text-align: center;
+          text-align: left;
 
           display: block;
         }
@@ -125,7 +125,7 @@ const WhoAreWe = () => {
             font-size: 14px;
             line-height: 22px;
 
-            text-align: center;
+            text-align: left;
           }
         }
       `}</style>

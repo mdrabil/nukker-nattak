@@ -638,8 +638,8 @@ const Services = () => {
           color="black"
           title2={true}
           title2Text="Services"
-          mobileSize="24px"
-          desktopSize="50px"
+          mobileSize="25px"
+          desktopSize="30px"
         />
       </div>
 
@@ -728,7 +728,7 @@ const Services = () => {
         }
 
         .title {
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 700;
           line-height: 1.4;
           text-align: center;

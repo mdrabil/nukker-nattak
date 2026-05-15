@@ -67,7 +67,8 @@ body{
   /* min-height:100%; */
   overflow-x:hidden;
 max-width: 1900px;
-
+  background-color: #f0e8d8;
+  background-image:url('/images/download.svg');
 
   color:var(--color-black);
   font-family:var(--font-primary);
@@ -81,10 +82,8 @@ max-width: 1900px;
   width:100%;
   /* max-width:var(--container-width); */
   margin-inline:auto;
-  background-image:url('/images/background.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+    background-color: #1a1008;
+  background-image:url('/images/download.svg');
   padding-left:var(--padding-x);
   padding-right:var(--padding-x);
 }
@@ -99,8 +98,7 @@ max-width: 1900px;
   background-repeat:no-repeat; */
   padding-left:var(--padding-x);
   padding-right:var(--padding-x);
-    background-color: #1a1008;
-  background-image:url('/images/download.svg');
+
 }
 
 
