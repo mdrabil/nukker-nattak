@@ -247,7 +247,7 @@ const Home2 = () => {
         {/* HEADING */}
 
         <h2
-          className="gsap-heading"
+          className=""
           style={{
             margin: 0,
             textAlign: "center",
