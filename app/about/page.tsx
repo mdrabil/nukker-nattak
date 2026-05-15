@@ -155,6 +155,8 @@ import OurStory from "./OurStory";
 import OurMission from "./OurMission";
 import WhyChooseUs from "./WhyChooseUs";
 import WhatWeDo from "./WhatWeDo";
+import FaqPage from "./FaqPage";
+
 
 const AboutPage = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -306,6 +308,8 @@ const AboutPage = () => {
         <OurMission />
         <WhatWeDo />
       </div> */}
+
+      <FaqPage/>
 
       {/* RESPONSIVE CSS */}
       <style jsx>{`

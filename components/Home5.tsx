@@ -487,7 +487,7 @@ const Home5 = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="website-container">
+    <div ref={sectionRef} className="">
       <div>
         <HeadingUpdate
           title="Why Street Plays"
@@ -547,7 +547,7 @@ const Home5 = () => {
             desktopSize="50px"
           />
 
-          <div style={{ marginBottom: "50px" }}>
+          <div style={{ paddingBottom: "50px" }}>
             <span
               style={{
                 fontSize: "clamp(16px, 3vw, 20px)",

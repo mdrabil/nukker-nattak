@@ -8,29 +8,52 @@ import { IoIosPause } from "react-icons/io";
 import { TiSocialFacebook } from "react-icons/ti";
 
 export default function Footer() {
-  const quickLinks = [
+  // const quickLinks = [
+  //   {
+  //     title: "About Us",
+  //     link: "/about",
+  //   },
+  //   {
+  //     title: "Gallery",
+  //     link: "/gallery",
+  //   },
+  //   {
+  //     title: "Join Our Team",
+  //     link: "/team",
+  //   },
+  //   {
+  //     title: "Inquiry",
+  //     link: "/inquiry",
+  //   },
+  //   {
+  //     title: "Contact Us",
+  //     link: "/contact",
+  //   },
+  // ];
+
+
+    const quickLinks = [
     {
       title: "About Us",
-      link: "/about",
+      link: "/",
     },
     {
       title: "Gallery",
-      link: "/gallery",
+      link: "/",
     },
     {
       title: "Join Our Team",
-      link: "/team",
+      link: "/",
     },
     {
       title: "Inquiry",
-      link: "/inquiry",
+      link: "/",
     },
     {
       title: "Contact Us",
-      link: "/contact",
+      link: "/",
     },
   ];
-
   const services = [
     "Government Campaigns",
     "Corporate Awareness",
@@ -71,7 +94,7 @@ export default function Footer() {
       }}
     >
       <div
-      className="website-container main-padding-top"
+      className="website-container-without-img main-padding-top"
         style={{
           position: "relative",
           zIndex: 10,

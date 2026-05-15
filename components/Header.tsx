@@ -8,22 +8,38 @@ import { useEffect, useState } from "react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
+  // const navLinks = [
+  //   {
+  //     title: "About Us",
+  //     link: "/about",
+  //   },
+  //   {
+  //     title: "Gallery",
+  //     link: "/gallery",
+  //   },
+  //   {
+  //     title: "Join Our Team",
+  //     link: "/team",
+  //   },
+  // ];
+
+  // BODY SCROLL LOCK
+ 
+   const navLinks = [
     {
       title: "About Us",
-      link: "/about",
+      link: "/",
     },
     {
       title: "Gallery",
-      link: "/gallery",
+      link: "/",
     },
     {
       title: "Join Our Team",
-      link: "/team",
+      link: "/",
     },
   ];
-
-  // BODY SCROLL LOCK
+ 
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -53,7 +69,7 @@ export default function Header() {
     backdropFilter: "blur(10px)",
   }}
 >
-        <div className="website-container">
+        <div className="website-container-without-img">
           <div
             style={{
               position: "relative",

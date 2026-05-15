@@ -128,9 +128,18 @@ export default function Home() {
     <WhatWeDo/>
    <Home2/>
    </div>
+   <div className="website-container">
    <Services />
+     </div>
+
+        <div className="website-container">
    <Home4 />
+     </div>
+        <div className="website-container">
+  
    <Home5 />
+     </div>
+
 
     </div>
   );

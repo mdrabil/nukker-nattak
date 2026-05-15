@@ -643,7 +643,7 @@ const Services = () => {
         />
       </div>
 
-      <div className="website-container">
+      <div className="">
         {/* ROW 1 */}
         <div className="row row3" ref={gridRef}>
           {services.slice(0, 3).map((item) => (
@@ -742,7 +742,7 @@ const Services = () => {
             justify-content: center;
             gap: 30px;
             margin-bottom: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             padding: 0px 0px;
           }
 
@@ -761,7 +761,7 @@ const Services = () => {
           }
 
           .title {
-            font-size: 18px;
+            font-size: 10px;
           }
         }
       `}</style>
