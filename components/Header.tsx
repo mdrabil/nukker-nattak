@@ -8,23 +8,7 @@ import { useEffect, useState } from "react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // const navLinks = [
-  //   {
-  //     title: "About Us",
-  //     link: "/about",
-  //   },
-  //   {
-  //     title: "Gallery",
-  //     link: "/gallery",
-  //   },
-  //   {
-  //     title: "Join Our Team",
-  //     link: "/team",
-  //   },
-  // ];
 
-  // BODY SCROLL LOCK
- 
    const navLinks = [
     {
       title: "About Us",
