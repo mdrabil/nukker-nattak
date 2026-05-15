@@ -99,6 +99,8 @@ max-width: 1900px;
   background-repeat:no-repeat; */
   padding-left:var(--padding-x);
   padding-right:var(--padding-x);
+    background-color: black;
+  background-image:url('/images/download.svg');
 }
 
 

@@ -62,11 +62,7 @@ export default function Header() {
     width: "100%",
     zIndex: 999,
     overflow: "hidden",
-    backgroundImage: "url('/images/header-bg1.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "bottom",
-    backgroundRepeat: "no-repeat",
-    backdropFilter: "blur(10px)",
+backgroundColor:"black"
   }}
 >
         <div className="website-container-without-img">
