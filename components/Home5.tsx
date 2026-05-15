@@ -297,18 +297,23 @@
 
 
 
+"use client";
+
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
 import {
   MessageCircle,
   Users,
   Clock3,
   Wallet,
-  HeartHandshake,
+ HeartHandshake,
 } from "lucide-react";
 
 import { useIconHover } from "@/hooks/useIconHover";
 import { HeadingUpdate } from "./common/HeadingUpdate";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home5 = () => {
   const gridRef = useRef<HTMLDivElement | null>(null);
@@ -352,7 +357,7 @@ const Home5 = () => {
     },
   ];
 
-  // AUTO SCROLL + REVERSE
+  // AUTO SCROLL
   useEffect(() => {
     const container = scrollRef.current;
 
@@ -366,7 +371,6 @@ const Home5 = () => {
     const interval = setInterval(() => {
       current += direction;
 
-      // REVERSE
       if (current >= items.length - 1) {
         direction = -1;
       }
@@ -388,43 +392,98 @@ const Home5 = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // GSAP
+  // GSAP ANIMATION
   useEffect(() => {
-    if (!gridRef.current) return;
+    if (!sectionRef.current || !gridRef.current) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        gridRef.current!.children,
-        { y: 50, opacity: 0, scale: 0.95 },
+        ".filterCard",
+        {
+          y: 120,
+          opacity: 0,
+          scale: 0.8,
+          rotateY: 15,
+        },
         {
           y: 0,
           opacity: 1,
           scale: 1,
-          duration: 0.8,
+          rotateY: 0,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".gsap-icon",
+        {
+          scale: 0,
+          rotate: -180,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          rotate: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: "back.out(1.8)",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".gsap-hover-text",
+        {
+          y: 40,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
           stagger: 0.12,
+          delay: 0.2,
           ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".borderLine",
+        {
+          scaleY: 0,
+          opacity: 0,
+        },
+        {
+          scaleY: 1,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+          transformOrigin: "center",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
         }
       );
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    gsap.fromTo(
-      ".divider",
-      { scaleY: 0, opacity: 0 },
-      {
-        scaleY: 1,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-        transformOrigin: "center",
-      }
-    );
   }, []);
 
   return (
@@ -440,33 +499,33 @@ const Home5 = () => {
         />
       </div>
 
-      {/* done */}
       <div className="filterWrapper">
         <div className="filterScroll" ref={scrollRef}>
-          {filters.map((item, index) => {
-            const isLast = index === filters.length - 1;
+          <div className="filterGrid" ref={gridRef}>
+            {filters.map((item, index) => {
+              const isLast = index === filters.length - 1;
 
-            return (
-              <div key={index} className="filterCard">
-                <div className="gsap-icon">{item.icon}</div>
+              return (
+                <div key={index} className="filterCard">
+                  <div className="gsap-icon">{item.icon}</div>
 
-                <h2 className="gsap-hover-text">{item.title}</h2>
+                  <h2 className="gsap-hover-text">{item.title}</h2>
 
-                <p>{item.desc}</p>
+                  <p>{item.desc}</p>
 
-                {!isLast && (
-                  <img
-                    src="/images/borderline.png"
-                    alt="divider"
-                    className="borderLine"
-                  />
-                )}
-              </div>
-            );
-          })}
+                  {!isLast && (
+                    <img
+                      src="/images/borderline.png"
+                      alt="divider"
+                      className="borderLine"
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* DOTS */}
         <div className="dotsWrapper">
           {filters.map((_, index) => (
             <span
@@ -503,10 +562,13 @@ const Home5 = () => {
         </div>
       </div>
 
-      {/* ================= STYLE ================= */}
       <style jsx>{`
         .wrapper {
           width: 100%;
+        }
+
+        .filterGrid {
+          display: flex;
         }
 
         .filterScroll {
@@ -515,7 +577,6 @@ const Home5 = () => {
           overflow-x: auto;
           padding: 10px 15px;
           scrollbar-width: none;
-
           scroll-behavior: smooth;
         }
 
@@ -523,7 +584,6 @@ const Home5 = () => {
           display: none;
         }
 
-        /* ===== CARD ===== */
         .filterCard {
           flex: 0 0 auto;
           width: 280px;
@@ -537,6 +597,17 @@ const Home5 = () => {
 
           position: relative;
           text-align: center;
+
+          transform-style: preserve-3d;
+          will-change: transform, opacity;
+        }
+
+        .gsap-icon {
+          transition: transform 0.4s ease;
+        }
+
+        .filterCard:hover .gsap-icon {
+          transform: scale(1.08) rotate(5deg);
         }
 
         .borderLine {
@@ -571,8 +642,6 @@ const Home5 = () => {
           font-size: 14px;
           font-weight: 300;
         }
-
-        /* ===== DOTS ===== */
 
         .dotsWrapper {
           display: flex;

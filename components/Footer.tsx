@@ -103,7 +103,7 @@ export default function Footer() {
             }}
           >
             <Image
-              src="/images/logo.svg"
+              src="/images/logo1.png"
               alt="Logo"
               width={180}
               height={80}
@@ -142,7 +142,7 @@ export default function Footer() {
               >
                 <div
                   style={{
-                    width: "44px",
+                    width: "25px",
                     height: "44px",
                     borderRadius: "50%",
                     display: "flex",
@@ -178,7 +178,7 @@ export default function Footer() {
               >
                 <div
                   style={{
-                    width: "44px",
+                    width: "26px",
                     height: "44px",
                     borderRadius: "50%",
                     display: "flex",
