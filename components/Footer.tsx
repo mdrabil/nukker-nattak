@@ -278,7 +278,7 @@ export default function Footer() {
                       display: "inline-block",
                       width: "fit-content",
                       color: "white",
-                      fontSize: "15px",
+                      fontSize: "14px",
                       fontWeight: 500,
                       textDecoration: "none",
                       transition: "all 0.3s ease",
@@ -381,7 +381,7 @@ export default function Footer() {
                     width: "fit-content",
                     cursor: "pointer",
                     color: "white",
-                    fontSize: "15px",
+                    fontSize: "14px",
                     fontWeight: 500,
                     transition: "all 0.3s ease",
                   }}
@@ -536,7 +536,7 @@ export default function Footer() {
         >
           <p
             style={{
-              fontSize: "15px",
+              fontSize: "14px",
               color: "white",
               lineHeight: "30px",
             }}

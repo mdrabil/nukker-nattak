@@ -28,7 +28,7 @@
 
   /* SPACING */
   --padding-x: 40px;
-  --padding-y: 60px;
+  --padding-y: 40px;
 
   /* =========================
      FONT SIZE
@@ -99,7 +99,7 @@ max-width: 1900px;
   background-repeat:no-repeat; */
   padding-left:var(--padding-x);
   padding-right:var(--padding-x);
-    background-color: black;
+    background-color: #1a1008;
   background-image:url('/images/download.svg');
 }
 
