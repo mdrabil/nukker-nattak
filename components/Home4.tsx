@@ -288,6 +288,79 @@ const Home4 = () => {
     },
   }
 );
+   // ENTRY ANIMATION
+      gsap.fromTo(
+        ".gridItem",
+        {
+          y: 60,
+          opacity: 0,
+          scale: 0.98,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power2.out",
+
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 88%",
+            once: true,
+          },
+        }
+      );
+
+   
+      gsap.utils.toArray<HTMLElement>(".gridItem").forEach((card) => {
+        gsap.to(card, {
+          scale: 1.01,
+          duration: 0.4,
+          ease: "power2.out",
+
+          scrollTrigger: {
+            trigger: card,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+
+            onEnter: () => {
+              gsap.to(card, {
+                scale: 1.01,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
+
+            onLeave: () => {
+              gsap.to(card, {
+                scale: 1,
+                duration: 0.1,
+                ease: "power2.out",
+              });
+            },
+
+            onEnterBack: () => {
+              gsap.to(card, {
+                scale: 1.01,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
+
+            onLeaveBack: () => {
+              gsap.to(card, {
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
+          },
+        });
+      });
+
+
     }, sectionRef);
 
     return () => ctx.revert();

@@ -1,117 +1,18 @@
-// "use client";
-
-// import React, { useEffect, useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// const Home2 = () => {
-//   const sectionRef = useRef<HTMLDivElement | null>(null);
-//   const titleRef = useRef<HTMLHeadingElement | null>(null);
-//   const imgRef = useRef<HTMLDivElement | null>(null);
-
-//   useEffect(() => {
-//     if (!sectionRef.current) return;
-
-//     // Title animation
-//     gsap.from(titleRef.current, {
-//       y: 80,
-//       opacity: 0,
-//       duration: 1,
-//       scrollTrigger: {
-//         trigger: titleRef.current,
-//         start: "top 85%",
-//       },
-//     });
-
-//     // Images animation
-//     gsap.from(imgRef.current?.children || [], {
-//       y: 60,
-//       opacity: 0,
-//       scale: 0.9,
-//       duration: 1,
-//       stagger: 0.15,
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         start: "top 85%",
-//       },
-//     });
-//   }, []);
-
-//   return (
-//     <div ref={sectionRef}>
-//       <div
-//         style={{
-//           width: "100%",
-//           padding: "40px 20px",
-//           display: "flex",
-//           flexDirection: "column",
-//           alignItems: "center",
-//           justifyContent: "center",
-//           gap: "35px",
-//         }}
-//       >
-//         {/* HEADING */}
-//         <h2
-//           ref={titleRef}
-//           style={{
-//             margin: 0,
-//             textAlign: "center",
-//             fontSize: "clamp(20px, 4vw, 42px)",
-//             fontWeight: 800,
-//           }}
-//         >
-//           Trusted Partner for Impactful{" "}
-//           <span className="" style={{ color: "#F26A21" }}>Awareness Campaigns</span>
-//         </h2>
-
-//         {/* GRID */}
-//         <div ref={imgRef} className="responsiveGrid">
-//           {[1, 2, 3, 4].map((item) => (
-//             <div key={item}>
-//               <img
-//                 src={`/images/home${item}.png`}
-//                 style={{ width: "100%", }}
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       <style jsx>{`
-//         .responsiveGrid {
-//           display: grid;
-//           grid-template-columns: repeat(2, 1fr);
-//           gap: 50px;
-//            align-items: end;
-//         }
-
-//         @media (min-width: 1024px) {
-//           .responsiveGrid {
-//             grid-template-columns: repeat(4, 1fr);
-//               align-items: end;
-//           }
-//         }
-//       `}</style>
-//     </div>
-//   );
-// };
-
-// export default Home2;
 
 
 
 
 // "use client";
 
-// import React, { useEffect, useRef } from "react";
-
+// import React, { useRef } from "react";
 
 // const Home2 = () => {
 //   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-
+//   // separate array
+//   const campaigns = [
+//     1, 4, 3, 2,1,4,3
+//   ];
 
 //   return (
 //     <div
@@ -124,17 +25,16 @@
 //       <div
 //         style={{
 //           width: "100%",
-//           padding: "40px 0px",
+//           padding: "40px 0px 0px 0px",
 
 //           display: "flex",
 //           flexDirection: "column",
 //           alignItems: "center",
 //           justifyContent: "center",
 
-//           gap: "35px",
+//           gap: "0px",
 //         }}
 //       >
-
 //         {/* HEADING */}
 
 //         <h2
@@ -155,11 +55,11 @@
 
 //         {/* GRID */}
 
-//         <div className="responsiveGrid gsap-stagger-wrap">
-//           {[1, 4, 3, 2].map((item) => (
+//         <div className="responsiveGrid">
+//           {campaigns.map((item) => (
 //             <div
 //               key={item}
-//               className="gridItem gsap-box"
+//               className="gridItem"
 //             >
 //               <img
 //                 src={`/images/home${item}.png`}
@@ -176,26 +76,37 @@
 //       <style jsx>{`
 //         .responsiveGrid {
 //           width: 100%;
-
+// padding-top:20px;
 //           display: flex;
-//           flex-wrap: wrap;
+//           flex-wrap: nowrap;
 
-//           justify-content: center;
+//             justify-content: flex-start;
 //           align-items: center;
 
-//           gap: 20px;
+//           gap: 40px;
+
+//           overflow-x: auto;
+//           overflow-y: hidden;
+
+//           scrollbar-width: none;
+//         }
+
+//         .responsiveGrid::-webkit-scrollbar {
+//           display: none;
 //         }
 
 //         .gridItem {
-//           width: calc(50% - 10px);
+//          width: calc(40% - 10px);
+
+//           flex: 0 0 auto;
 
 //           display: flex;
-//           justify-content: center;
+//           justify-content: flex-start;
 //           align-items: center;
 //         }
 
 //         .gridImage {
-//           width: 70%;
+//           width: 100%;
 //           max-width: 220px;
 //           height: 180px;
 
@@ -209,12 +120,24 @@
 
 //         @media (min-width: 1024px) {
 //           .responsiveGrid {
-//             gap: 60px;
+//             gap: 0px;
 //           }
 
 //           .gridItem {
 //             width: auto;
 //           }
+//              .gridImage {
+//           width: 70%;
+//           max-width: 220px;
+//           height: 180px;
+
+//           object-fit: contain;
+//           display: block;
+
+//           will-change: transform, opacity;
+//           transform: translateZ(0);
+//           backface-visibility: hidden;
+//         }
 //         }
 //       `}</style>
 //     </div>
@@ -225,17 +148,80 @@
 
 
 
+
+
+
 "use client";
 
-import React, { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Home2 = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // separate array
-  const campaigns = [
-    1, 4, 3, 2,1,4,3
-  ];
+  const campaigns = [1, 4, 3, 2, 1, 4, 3];
+
+  // AUTO SCROLL
+  useEffect(() => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    const interval = setInterval(() => {
+      const items = container.querySelectorAll(".gridItem");
+
+      if (!items.length) return;
+
+      const nextIndex = (activeIndex + 1) % items.length;
+
+      const nextItem = items[nextIndex] as HTMLElement;
+
+      container.scrollTo({
+        left: nextItem.offsetLeft - 20,
+        behavior: "smooth",
+      });
+
+      setActiveIndex(nextIndex);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
+  // MANUAL ARROWS
+  const scrollToItem = (index: number) => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    const items = container.querySelectorAll(".gridItem");
+
+    const item = items[index] as HTMLElement;
+
+    container.scrollTo({
+      left: item.offsetLeft - 20,
+      behavior: "smooth",
+    });
+
+    setActiveIndex(index);
+  };
+
+  const nextSlide = () => {
+    const next = (activeIndex + 1) % campaigns.length;
+    scrollToItem(next);
+  };
+
+  const prevSlide = () => {
+    const prev =
+      activeIndex === 0
+        ? campaigns.length - 1
+        : activeIndex - 1;
+
+    scrollToItem(prev);
+  };
 
   return (
     <div
@@ -276,12 +262,27 @@ const Home2 = () => {
           </span>
         </h2>
 
+        {/* MOBILE ARROWS */}
+
+    <div className="mobileControls">
+  <button onClick={prevSlide}>
+    <ChevronLeft size={20} />
+  </button>
+
+  <button onClick={nextSlide}>
+    <ChevronRight size={20} />
+  </button>
+</div>
+
         {/* GRID */}
 
-        <div className="responsiveGrid">
-          {campaigns.map((item) => (
+        <div
+          className="responsiveGrid"
+          ref={scrollRef}
+        >
+          {campaigns.map((item, index) => (
             <div
-              key={item}
+              key={index}
               className="gridItem"
             >
               <img
@@ -292,6 +293,20 @@ const Home2 = () => {
             </div>
           ))}
         </div>
+
+        {/* DOTS */}
+
+        <div className="dotsWrapper">
+          {campaigns.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${
+                activeIndex === index ? "activeDot" : ""
+              }`}
+              onClick={() => scrollToItem(index)}
+            />
+          ))}
+        </div>
       </div>
 
       {/* CSS */}
@@ -299,17 +314,20 @@ const Home2 = () => {
       <style jsx>{`
         .responsiveGrid {
           width: 100%;
-padding-top:20px;
+          padding-top: 20px;
+
           display: flex;
           flex-wrap: nowrap;
 
-            justify-content: flex-start;
+          justify-content: flex-start;
           align-items: center;
 
           gap: 40px;
 
           overflow-x: auto;
           overflow-y: hidden;
+
+          scroll-behavior: smooth;
 
           scrollbar-width: none;
         }
@@ -319,7 +337,7 @@ padding-top:20px;
         }
 
         .gridItem {
-         width: calc(40% - 10px);
+          width: calc(40% - 10px);
 
           flex: 0 0 auto;
 
@@ -341,6 +359,56 @@ padding-top:20px;
           backface-visibility: hidden;
         }
 
+        .dotsWrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+
+          margin-top: 18px;
+        }
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #d1d1d1;
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+
+        .activeDot {
+          width: 22px;
+          border-radius: 20px;
+          background: #f26a21;
+        }
+
+        .mobileControls {
+          width: 100%;
+
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+
+          padding: 12px 20px 0px 20px;
+        }
+
+        .mobileControls button {
+          width: 38px;
+          height: 38px;
+  display: flex;
+          justify-content: center;
+          align-items:center;
+          border: none;
+          border-radius: 50%;
+
+          background: #f26a21;
+          color: white;
+
+          font-size: 18px;
+          cursor: pointer;
+        }
+
         @media (min-width: 1024px) {
           .responsiveGrid {
             gap: 0px;
@@ -349,18 +417,23 @@ padding-top:20px;
           .gridItem {
             width: auto;
           }
-             .gridImage {
-          width: 70%;
-          max-width: 220px;
-          height: 180px;
 
-          object-fit: contain;
-          display: block;
+          .gridImage {
+            width: 70%;
+            max-width: 220px;
+            height: 180px;
 
-          will-change: transform, opacity;
-          transform: translateZ(0);
-          backface-visibility: hidden;
-        }
+            object-fit: contain;
+            display: block;
+
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+          }
+
+          .mobileControls {
+            display: none;
+          }
         }
       `}</style>
     </div>

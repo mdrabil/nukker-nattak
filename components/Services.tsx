@@ -452,7 +452,7 @@ import { HeadingUpdate } from "./common/HeadingUpdate";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Home3 = () => {
+const Services = () => {
   const gridRef = useRef<HTMLDivElement | null>(null);
   const headingWrapRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -548,76 +548,76 @@ const Home3 = () => {
       );
 
       // ENTRY ANIMATION
-      // gsap.fromTo(
-      //   ".gridItem",
-      //   {
-      //     y: 60,
-      //     opacity: 0,
-      //     scale: 0.96,
-      //   },
-      //   {
-      //     y: 0,
-      //     opacity: 1,
-      //     scale: 1,
-      //     duration: 0.9,
-      //     stagger: 0.12,
-      //     ease: "power2.out",
+      gsap.fromTo(
+        ".gridItem",
+        {
+          y: 60,
+          opacity: 0,
+          scale: 0.96,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power2.out",
 
-      //     scrollTrigger: {
-      //       trigger: gridRef.current,
-      //       start: "top 88%",
-      //       once: true,
-      //     },
-      //   }
-      // );
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 88%",
+            once: true,
+          },
+        }
+      );
 
    
-      // gsap.utils.toArray<HTMLElement>(".gridItem").forEach((card) => {
-      //   gsap.to(card, {
-      //     scale: 1.06,
-      //     duration: 0.4,
-      //     ease: "power2.out",
+      gsap.utils.toArray<HTMLElement>(".gridItem").forEach((card) => {
+        gsap.to(card, {
+          scale: 1.06,
+          duration: 0.4,
+          ease: "power2.out",
 
-      //     scrollTrigger: {
-      //       trigger: card,
-      //       start: "top center",
-      //       end: "bottom center",
-      //       scrub: 1,
+          scrollTrigger: {
+            trigger: card,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
 
-      //       onEnter: () => {
-      //         gsap.to(card, {
-      //           scale: 1.06,
-      //           duration: 0.4,
-      //           ease: "power2.out",
-      //         });
-      //       },
+            onEnter: () => {
+              gsap.to(card, {
+                scale: 1.06,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
 
-      //       onLeave: () => {
-      //         gsap.to(card, {
-      //           scale: 1,
-      //           duration: 0.4,
-      //           ease: "power2.out",
-      //         });
-      //       },
+            onLeave: () => {
+              gsap.to(card, {
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
 
-      //       onEnterBack: () => {
-      //         gsap.to(card, {
-      //           scale: 1.06,
-      //           duration: 0.4,
-      //           ease: "power2.out",
-      //         });
-      //       },
+            onEnterBack: () => {
+              gsap.to(card, {
+                scale: 1.06,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
 
-      //       onLeaveBack: () => {
-      //         gsap.to(card, {
-      //           scale: 1,
-      //           duration: 0.4,
-      //           ease: "power2.out",
-      //         });
-      //       },
-      //     },
-      //   });
-      // });
+            onLeaveBack: () => {
+              gsap.to(card, {
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+            },
+          },
+        });
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -769,4 +769,4 @@ const Home3 = () => {
   );
 };
 
-export default Home3;
+export default Services;

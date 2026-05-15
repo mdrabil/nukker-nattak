@@ -72,7 +72,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import AwarenessBanner from "@/components/AwarenessBanner";
 import Home2 from "@/components/Home2";
-import Home3 from "@/components/Home3";
+import Services from "@/components/Services";
 import Home4 from "@/components/Home4";
 import Home5 from "@/components/Home5";
 import WhatWeDo from "@/components/home/WhatWeDo";
@@ -128,7 +128,7 @@ export default function Home() {
     <WhatWeDo/>
    <Home2/>
    </div>
-   <Home3 />
+   <Services />
    <Home4 />
    <Home5 />
 

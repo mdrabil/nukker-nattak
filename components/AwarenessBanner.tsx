@@ -292,7 +292,7 @@ export default function AwarenessBanner() {
             background: url("/images/mobile-banner1.jpeg")
               center center / cover no-repeat !important;
 
-            padding: 120px 20px 70px 20px !important;
+            padding: 70px 20px 70px 20px !important;
           }
         }
       `}</style>

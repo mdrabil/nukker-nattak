@@ -207,7 +207,7 @@ export default function Header() {
       ✓
     </span>
 
-    Book a Street Play
+    Enquiry Now
   </span>
 </Link>
 
@@ -493,7 +493,7 @@ export default function Header() {
           e.currentTarget.style.transform = "scale(1)";
         }}
       >
-        ✓ Book a Street Play
+        ✓ Enquiry Now
       </Link>
 
       {/* ICONS */}
