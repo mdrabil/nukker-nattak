@@ -316,30 +316,35 @@ export default function Header() {
       />
 
    <div
-  style={{
-    position: "fixed",
-    top: 0,
-    right: 0,
-    zIndex: 100000,
-    height: "100vh",
-    width: "88%",
-    maxWidth: "420px",
-    overflow: "hidden",
-              textDecoration: "none",
-              backgroundColor:"#1a1008",
-                      backgroundImage: "url('/images/download.svg')",
-                      
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      backgroundRepeat: "no-repeat",
-    borderLeft: "1px solid rgba(255,255,255,0.08)",
-    boxShadow: "0 0 60px rgba(0,0,0,0.6)",
-    transition: "all 0.5s cubic-bezier(0.22,1,0.36,1)",
-    transform: menuOpen
-      ? "translateX(0)"
-      : "translateX(100%)",
-    opacity: menuOpen ? 1 : 0,
-  }}
+   className="main-bg-image"
+style={{
+  position: "fixed",
+  top: 0,
+  right: 0,
+  zIndex: 100000,
+  height: "100vh",
+  width: "88%",
+  maxWidth: "420px",
+  overflow: "hidden",
+  textDecoration: "none",
+
+  backgroundColor: "#000000",
+
+  backgroundImage:
+    `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E")`,
+
+  backgroundRepeat: "repeat",
+
+  borderLeft: "1px solid rgba(255,255,255,0.08)",
+  boxShadow: "0 0 60px rgba(0,0,0,0.6)",
+  transition: "all 0.5s cubic-bezier(0.22,1,0.36,1)",
+
+  transform: menuOpen
+    ? "translateX(0)"
+    : "translateX(100%)",
+
+  opacity: menuOpen ? 1 : 0,
+}}
 >
   {/* BACKGROUND EFFECT */}
   {/* <div
