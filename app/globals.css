@@ -66,8 +66,9 @@ body{
   width:100%;
   /* min-height:100%; */
   overflow-x:hidden;
-max-width: 1900px;
+    max-width: 2100px;
   background-color: #f0e8d8;
+  margin: auto;
   background-image:url('/images/download.svg');
 
   color:var(--color-black);
@@ -81,7 +82,8 @@ max-width: 1900px;
 .website-container{
   width:100%;
   /* max-width:var(--container-width); */
-  margin-inline:auto;
+    max-width: 2100px;
+  /* margin-inline:auto; */
   background-color: #f0e8d8;
   /* background-image:url('/images/download.svg'); */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
@@ -94,6 +96,7 @@ max-width: 1900px;
 .website-container-with-bg-img{
   width:100%;
   /* max-width:var(--container-width); */
+  max-width: 2100px;
   margin-inline:auto;
   background-color: #000000;
   /* background-color: #1a1008; */
@@ -109,6 +112,7 @@ background-repeat: repeat;
   width:100%;
   /* max-width:var(--container-width); */
   margin-inline:auto;
+      max-width: 2100px;
   /* background-color: #000000; */
   /* background-color: #1a1008; */
   /* background-image:url('/images/download.svg'); */
