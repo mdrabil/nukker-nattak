@@ -120,9 +120,9 @@ export default function Home() {
     <div>
 
 
-   <AwarenessBanner/>
    
     
+   <AwarenessBanner/>
    <div className="website-container">
     <WhoAreWe/>
     <WhatWeDo/>

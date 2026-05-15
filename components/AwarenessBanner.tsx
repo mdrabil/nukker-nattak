@@ -109,7 +109,7 @@ export default function AwarenessBanner() {
       className="hero-mobile"
     >
       <div
-        className="website-container-without-img"
+        className="website-container-without-any"
         style={{
           width: "100%",
           display: "flex",

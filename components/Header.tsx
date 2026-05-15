@@ -311,7 +311,9 @@ backgroundColor:"black"
     maxWidth: "420px",
     overflow: "hidden",
               textDecoration: "none",
-                      backgroundImage: "url('/images/black-bg.png')",
+              backgroundColor:"#1a1008",
+                      backgroundImage: "url('/images/download.svg')",
+                      
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",

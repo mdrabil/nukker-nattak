@@ -490,7 +490,7 @@ const Home5 = () => {
     <div ref={sectionRef} className="">
       <div>
         <HeadingUpdate
-          title="Why Street Plays"
+          title="Why Street "
           color="black"
           title2={true}
           title2Text="Work So Well"
