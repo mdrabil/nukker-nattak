@@ -48,8 +48,8 @@ const Heading2 = ({
   title2Text = "",
 
   // 👇 NEW: responsive size control
-  mobileSize = "40px",
-  desktopSize = "60px",
+  mobileSize = "30px",
+  desktopSize = "45px",
 }) => {
   return (
     <div

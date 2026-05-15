@@ -275,7 +275,7 @@ const OurStory = () => {
         alignItems: "center",
         justifyContent: "space-between",
         gap: "20px",
-        padding: "40px 0px",
+        // padding: "40px 0px",
         flexWrap: "wrap",
       }}
     >
@@ -286,17 +286,18 @@ const OurStory = () => {
           minWidth: "300px",
         }}
       >
+
         <div ref={titleRef}>
-          <Heading2 title="Our Story" color="black" />
+          <Heading2 title="Our" color="black" title2={true} title2Text="Story" />
         </div>
 
         <p
           ref={para1Ref}
           style={{
             fontWeight: 600,
-            fontSize: 24,
+            fontSize: "20",
             marginBottom: "10px",
-            marginTop: "20px",
+            marginTop: "24px",
             lineHeight: "1.5",
           }}
         >
@@ -309,7 +310,7 @@ const OurStory = () => {
           style={{
             color: "#666",
             lineHeight: "1.8",
-            fontSize: "18px",
+            fontSize: "16px",
           }}
         >
           Street plays have the unique ability to connect directly with people
@@ -345,7 +346,7 @@ const OurStory = () => {
       <style jsx>{`
         @media (max-width: 768px) {
           p {
-            font-size: 16px !important;
+            font-size: 14px !important;
           }
         }
       `}</style>

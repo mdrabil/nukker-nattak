@@ -12,6 +12,7 @@ import {
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Heading2 from "@/components/common/Heading2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -138,31 +139,22 @@ const WhyChooseUs = () => {
     <div
       ref={sectionRef}
       style={{
-        width: "100%",
-        backgroundImage:
-          "url('/images/black-bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        padding: "60px 0px",
-        overflow: "hidden",
+      //   width: "100%",
+      //   backgroundImage:
+      //     "url('/images/black-bg.png')",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+        padding: "60px 0px 60px 0px",
+      //   overflow: "hidden",
       }}
     >
-      <div className="website-container">
+      <div className="website-container-with-bg-img">
         {/* TITLE */}
-        <h2
-          ref={titleRef}
-          style={{
-            color: "#fff",
-            fontSize: "clamp(35px, 4vw, 48px)",
-            fontWeight: 800,
-            marginBottom: "40px",
-          }}
-        >
-          Why{" "}
-          <span style={{ color: "#F56A28" }}>
-            Choose Us?
-          </span>
-        </h2>
+         <div ref={titleRef} style={{
+          padding:"60px 0px"
+         }}>
+          <Heading2 title="Why" color="white" title2={true} title2Text="Choose Us" />
+        </div>
 
         <div
           className="why-wrapper"

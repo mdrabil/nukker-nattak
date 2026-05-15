@@ -249,7 +249,7 @@ const AboutPage = () => {
         style={styles.hero}
         className="hero-mobile"
       >
-        <div className="website-container">
+        <div className="website-container-without-img">
           <div
             ref={contentRef}
             style={styles.content}
@@ -296,12 +296,13 @@ const AboutPage = () => {
       </div>
 
       {/* STORY */}
-      {/* <div className="website-container">
+       <div className="website-container">
         <OurStory />
       </div>
 
    
       <WhyChooseUs />
+      {/*
 
    
       <div className="website-container">
@@ -309,7 +310,10 @@ const AboutPage = () => {
         <WhatWeDo />
       </div> */}
 
+<div className="website-container">
+
       <FaqPage/>
+</div>
 
       {/* RESPONSIVE CSS */}
       <style jsx>{`
@@ -323,7 +327,7 @@ const AboutPage = () => {
             height: auto !important;
 
             padding-top: 90px !important;
-            padding-bottom: 70px !important;
+            // padding-bottom: 70px !important;
 
             background-position: center !important;
           }

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { HeadingUpdate } from "@/components/common/HeadingUpdate";
 
 type FAQItem = {
   question: string;
@@ -33,18 +34,28 @@ const faqs: FAQItem[] = [
 
 const FaqPage = () => {
   const refs = useRef<(HTMLDivElement | null)[]>([]);
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<number | null>(0);
+
+  useEffect(() => {
+    if (refs.current[0]) {
+      gsap.set(refs.current[0], {
+        height: "auto",
+      });
+    }
+  }, []);
 
   const toggle = (i: number) => {
-    const el = refs.current[i];
-    if (!el) return;
+    const current = refs.current[i];
+
+    if (!current) return;
 
     if (active === i) {
-      gsap.to(el, {
+      gsap.to(current, {
         height: 0,
         duration: 0.4,
         ease: "power2.inOut",
       });
+
       setActive(null);
       return;
     }
@@ -52,19 +63,25 @@ const FaqPage = () => {
     if (active !== null && refs.current[active]) {
       gsap.to(refs.current[active], {
         height: 0,
-        duration: 0.3,
+        duration: 0.35,
+        ease: "power2.inOut",
       });
     }
 
-    gsap.set(el, { height: "auto" });
-    const h = el.scrollHeight;
+    gsap.set(current, {
+      height: "auto",
+    });
+
+    const height = current.scrollHeight;
 
     gsap.fromTo(
-      el,
-      { height: 0 },
+      current,
       {
-        height: h,
-        duration: 0.5,
+        height: 0,
+      },
+      {
+        height,
+        duration: 0.45,
         ease: "power2.inOut",
       }
     );
@@ -73,108 +90,126 @@ const FaqPage = () => {
   };
 
   return (
-    <section style={styles.section}>
-      <div style={styles.container}>
-        <h2 style={styles.heading}>
-          Frequently <span style={{ color: "#ff7a00" }}>Asked Questions</span>
-        </h2>
+    <section
+      style={{
+        width: "100%",
+        paddingBottom: "60px",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1200px",
+          margin: "auto",
+          padding: "0 0px",
+        }}
+      >
+        <div
+        //   style={{
+        //     marginBottom: "40px",
+        //   }}
+        >
+          <HeadingUpdate
+            title="Our"
+            color="black"
+            title2={true}
+            title2Text="FAQ'S"
+            mobileSize="25px"
+            desktopSize="30px"
+          />
+        </div>
 
-        <div style={styles.grid}>
+        <div
+          className="faq-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "25px",
+          }}
+        >
           {faqs.map((item, i) => (
-            <div key={i} style={styles.card}>
-              <button style={styles.question} onClick={() => toggle(i)}>
-                <span>
+            <div
+              key={i}
+              style={{
+                border: "1px solid #000",
+                borderRadius: "6px",
+                padding: "12px",
+                background: "#fff",
+                height: "fit-content",
+              }}
+            >
+              <button
+                onClick={() => toggle(i)}
+                style={{
+                  width: "100%",
+                  background: "transparent",
+                  border: "none",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  gap: "10px",
+                  padding: "5px",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    textAlign: "left",
+                    lineHeight: "1.5",
+                  }}
+                >
                   {i + 1}. {item.question}
                 </span>
-                <span style={styles.icon}>{active === i ? "−" : "+"}</span>
+
+                <span
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: 700,
+                    minWidth: "20px",
+                  }}
+                >
+                  {active === i ? "−" : "+"}
+                </span>
               </button>
 
               <div
                 ref={(el) => {
                   refs.current[i] = el;
                 }}
-                style={styles.answerBox}
+                style={{
+                  height: active === i ? "auto" : 0,
+                  overflow: "hidden",
+                  padding: "0 5px",
+                }}
               >
-                <p style={styles.answer}>{item.answer}</p>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    lineHeight: "1.8",
+                    paddingTop: "12px",
+                    paddingBottom: "10px",
+                    margin: 0,
+                  }}
+                >
+                  {item.answer}
+                </p>
               </div>
             </div>
           ))}
         </div>
+
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .faq-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
 };
 
 export default FaqPage;
-
-/* ---------------- STYLES ---------------- */
-
-const styles: { [key: string]: React.CSSProperties } = {
-  section: {
-    width: "100%",
-    padding: "80px 16px",
-    backgroundImage:
-      "url('https://images.unsplash.com/photo-1520975958225-5c9c0c6f7b2c?auto=format&fit=crop&w=1600&q=80')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed",
-  },
-
-  container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-  },
-
-  heading: {
-    textAlign: "center",
-    fontSize: "clamp(24px, 4vw, 42px)",
-    fontWeight: 700,
-    color: "#fff",
-    marginBottom: "40px",
-  },
-
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)", // desktop 2
-    gap: "18px",
-  },
-
-  card: {
-    border: "1px solid #fff", // white border
-    borderRadius: "12px",
-    padding: "10px",
-  },
-
-  question: {
-    width: "100%",
-    background: "transparent",
-    border: "none",
-    color: "#fff",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    cursor: "pointer",
-    padding: "14px 10px",
-    fontSize: "15px",
-    fontWeight: 500,
-  },
-
-  icon: {
-    color: "#ff7a00",
-    fontSize: "20px",
-    fontWeight: 700,
-  },
-
-  answerBox: {
-    height: 0,
-    overflow: "hidden",
-    padding: "0 10px",
-  },
-
-  answer: {
-    color: "#ccc",
-    fontSize: "14px",
-    lineHeight: "1.6",
-    padding: "10px 0 14px",
-  },
-};

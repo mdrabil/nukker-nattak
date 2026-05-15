@@ -324,7 +324,7 @@ const Home2 = () => {
           title="Our"
           color="black"
           title2={true}
-          title2Text="Logo"
+          title2Text="Client's"
           mobileSize="25px"
           desktopSize="30px"
         />
