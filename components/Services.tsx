@@ -692,11 +692,11 @@ const Services = () => {
       {/* CSS */}
       <style jsx>{`
         .row {
-          width: 100%;
+          width: 90%;
           display: flex;
           justify-content: center;
           gap: 30px;
-          margin-bottom: 30px;
+          margin-bottom: auto;
           flex-wrap: wrap;
           padding: 0px 100px;
         }
@@ -737,11 +737,11 @@ const Services = () => {
         /* MOBILE */
         @media (max-width: 767px) {
           .row {
-            width: 100%;
+            width: 90%;
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-bottom: 30px;
+            margin: auto;
             flex-wrap: nowrap;
             padding: 0px 0px;
           }

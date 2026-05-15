@@ -144,11 +144,15 @@ const WhyChooseUs = () => {
       //     "url('/images/black-bg.png')",
       //   backgroundSize: "cover",
       //   backgroundPosition: "center",
-        padding: "60px 0px 60px 0px",
+        // padding: "60px 0px 60px 0px",
       //   overflow: "hidden",
       }}
     >
-      <div className="website-container-with-bg-img">
+      <div className="website-container-with-bg-img" >
+      <div style={{
+        padding: "60px 0px 60px 0px",
+      }}>
+
         {/* TITLE */}
          <div ref={titleRef} style={{
           padding:"60px 0px"
@@ -325,6 +329,7 @@ const WhyChooseUs = () => {
     }
   }
 `}</style>
+      </div>
       </div>
     </div>
   );
