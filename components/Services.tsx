@@ -695,7 +695,7 @@ const Services = () => {
           width: 100%;
           display: flex;
           justify-content: center;
-          gap: 20px;
+          gap: 30px;
           margin-bottom: 30px;
           flex-wrap: wrap;
           padding: 0px 100px;
@@ -756,12 +756,12 @@ const Services = () => {
           }
 
           .row {
-            gap: 20px;
+            gap: 30px;
             margin-bottom: 20px;
           }
 
           .title {
-            font-size: 16px;
+            font-size: 18px;
           }
         }
       `}</style>
