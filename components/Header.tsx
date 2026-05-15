@@ -65,7 +65,7 @@ export default function Header() {
 
   }}
 >
-        <div className="website-container-without-img">
+        <div className="website-container-with-bg-img">
           <div
             style={{
               position: "relative",

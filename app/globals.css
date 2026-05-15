@@ -91,7 +91,7 @@ max-width: 1900px;
   padding-right:var(--padding-x);
 }
 
-.website-container-without-img{
+.website-container-with-bg-img{
   width:100%;
   /* max-width:var(--container-width); */
   margin-inline:auto;
@@ -109,7 +109,7 @@ background-repeat: repeat;
   width:100%;
   /* max-width:var(--container-width); */
   margin-inline:auto;
-  background-color: #000000;
+  /* background-color: #000000; */
   /* background-color: #1a1008; */
   /* background-image:url('/images/download.svg'); */
   /* background-size:cover;

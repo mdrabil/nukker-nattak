@@ -123,7 +123,7 @@ export default function Footer() {
   }}
 />
       <div
-      className="website-container-without-img main-padding-top"
+      className="website-container-with-bg-img main-padding-top"
         style={{
           position: "relative",
           zIndex: 10,
