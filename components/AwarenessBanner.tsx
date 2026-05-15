@@ -91,7 +91,7 @@ export default function AwarenessBanner() {
       ref={sectionRef}
       style={{
         width: "100%",
-        minHeight: "auto",
+        minHeight: "100vh",
 
         background:
           "url('/images/home.png') top / cover no-repeat",
@@ -101,10 +101,10 @@ export default function AwarenessBanner() {
 
         overflow: "hidden",
 
-        paddingTop: "100px",
-        paddingBottom: "200px",
-        paddingLeft: "20px",
-        paddingRight: "20px",
+        // paddingTop: "140px",
+        paddingBottom: "100px",
+        // paddingLeft: "20px",
+        // paddingRight: "20px",
       }}
       className="hero-mobile"
     >
@@ -192,7 +192,7 @@ export default function AwarenessBanner() {
               marginTop: "10px",
             }}
           >
-            <Link
+            {/* <Link
               href="/contact"
               style={{
                 textDecoration: "none",
@@ -230,9 +230,9 @@ export default function AwarenessBanner() {
               }}
             >
               Enquiry Now →
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               href="/work"
               style={{
                 background: "transparent",
@@ -278,7 +278,7 @@ export default function AwarenessBanner() {
               }}
             >
               Watch Our Work ▶
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -289,10 +289,10 @@ export default function AwarenessBanner() {
             min-height: auto !important;
             height: auto !important;
 
-            background: url("/images/mobile-banner1.jpeg")
-              center center / cover no-repeat !important;
+            background: url("/images/mobile-banner2.jpeg")
+              bottom center / cover no-repeat !important;
 
-            padding: 70px 20px 70px 20px !important;
+            padding: 100px 20px 100px 20px !important;
           }
         }
       `}</style>

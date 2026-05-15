@@ -46,9 +46,9 @@ export default function Header() {
     width: "100%",
     zIndex: 999,
     overflow: "hidden",
-    backgroundImage: "url('/images/header-bg.png')",
+    backgroundImage: "url('/images/header-bg1.png')",
     backgroundSize: "cover",
-    backgroundPosition: "top",
+    backgroundPosition: "bottom",
     backgroundRepeat: "no-repeat",
     backdropFilter: "blur(10px)",
   }}
@@ -67,7 +67,7 @@ export default function Header() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                padding: "12px 0",
+                padding: "15px 0",
                 gap: "20px",
               }}
             >
@@ -156,8 +156,8 @@ export default function Header() {
                     gap: "28px",
                   }}
                 >
-                  {/* BUTTON */}
-              <Link
+        
+              {/* <Link
   href="/contact"
   style={{
     position: "relative",
@@ -209,7 +209,7 @@ export default function Header() {
 
     Enquiry Now
   </span>
-</Link>
+</Link> */}
 
                   {/* ICON */}
                   <Link
@@ -463,7 +463,7 @@ export default function Header() {
       }}
     >
       {/* BUTTON */}
-      <Link
+      {/* <Link
         href="/contact"
         onClick={() => setMenuOpen(false)}
         style={{
@@ -494,7 +494,7 @@ export default function Header() {
         }}
       >
         ✓ Enquiry Now
-      </Link>
+      </Link> */}
 
       {/* ICONS */}
       <div
